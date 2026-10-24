@@ -1,4 +1,4 @@
-// Optional SEO metadata specifically for the contact page
+
 export const metadata = {
   title: 'Contact Us | OVIQO',
   description: 'Get in touch with OVIQO to learn more about government contracting solutions.',

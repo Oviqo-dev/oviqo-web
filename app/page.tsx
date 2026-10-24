@@ -124,7 +124,7 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] drop-shadow-md">
-                Do more business with <span className="block mt-1">the government.</span>
+                Do more business with the government.
               </h1>
 
               <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed drop-shadow font-medium">
