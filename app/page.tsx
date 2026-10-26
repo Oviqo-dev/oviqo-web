@@ -160,7 +160,7 @@ export default function Home() {
         </section>
 
         <footer className="py-6 text-center text-xs text-gray-900 bg-white">
-          © 2026 OVIQO. All rights reserved.
+          © 2026 OVIQO. All rights reserved. Developed by Adl & Ahad
         </footer>
       </div>
     </>
