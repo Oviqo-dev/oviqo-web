@@ -103,9 +103,74 @@ export default function Contact(){
           </div>
         </header>
       </div>
-      <main className="mx-auto max-w-lg mt-5">
-              <h1 className="text-4xl font-bold text-slate-900"> Contact us </h1>
+      <main className="mx-auto mt-5">
+         <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don't be Shy </h1>
+        <div className='flex gap-10 '>
+          <div className='mt-35 -ml-25'>
+            <h2 className="flex items-center text-6xl font-bold text-slate-500 text-left gap-4"> Get in 
+               <span className="inline-block h-1 w-25 bg-slate-500"> </span> </h2>
+            <h2 className="text-7xl font-bold text-slate-500 text-left"> touch with us  </h2>
+            
+
+            </div>          
+          <div className='w-[500px] h-[490px] rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
+             <form>
+                <div className=''>
+            <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
+              Name
+            </label>
+
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autoComplete="name"
+              required
+              className="w-full rounded-lg border border-slate-600 p-3"
+            />
+          </div>
+          <div>
+            <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
+              Email
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="text"
+              autoComplete="email"
+              required
+              className="w-full rounded-lg border border-slate-600 p-3"></input>
+          </div>
+          <div>
+            <label htmlFor="message" className="mb-2 mt-2 block text-slate-600">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              required
+              className="w-full rounded-lg border border-slate-600 p-3"
+            />
+          </div>
+
+          
+          <button
+            type="submit"
+            className="mt-2 rounded-[80] bg-slate-600 px-6 py-3 font-semibold text-white hover:bg-gray-700"
+          > Send message
+          </button>
+
+             </form>
+          </div>
+        </div>
       </main>
+        <footer className="mt-10 py-6 text-center text-xs text-gray-900 bg-white">
+            <p>© 2026 OVIQO. All rights reserved.</p>
+            <p>Developed by Adl &amp; Ahad.</p>
+        </footer>
     </>
   );
 }
