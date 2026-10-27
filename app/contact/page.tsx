@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 
-export default function contact(){
+export default function Contact(){
     const [scrolled, setScrolled] = useState(false);
     
       useEffect(() => {
