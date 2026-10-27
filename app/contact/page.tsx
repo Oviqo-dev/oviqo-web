@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 
 export default function Contact(){
+<<<<<<< HEAD
     const [scrolled, setScrolled] = useState(false);
     
       useEffect(() => {
@@ -15,6 +16,18 @@ export default function Contact(){
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+=======
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+>>>>>>> 257ddca9e5a3aa7b0a08465c86544589bc12d260
     
     return(
         <>
