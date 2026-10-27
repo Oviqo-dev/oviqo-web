@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OVIQO | The system to win government contracts",
-  description: "Created by Oviqo Team",
+  title: "OVIQO",
+  description: "The system to win government contracts",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
