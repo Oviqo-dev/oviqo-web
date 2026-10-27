@@ -87,13 +87,13 @@ export default function Home() {
               About us
             </Link>
           </nav>
-
+          
           <div className="flex-1 flex items-center justify-end">
             <Link
               href="/contact"
               className={`px-5 py-2 text-sm font-semibold rounded-full shadow-sm transition border ${
                 scrolled
-                  ? 'bg-gray-900 text-white hover:bg-gray-800 border-transparent'
+                  ? 'bg-[#9d96e9] text-white hover:bg-[#8b84dd] border-transparent'
                   : 'text-gray-900 bg-white/80 backdrop-blur-md border-gray-300 hover:bg-white'
               }`}
             >
@@ -133,16 +133,16 @@ export default function Home() {
 
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                 <a
-                  href="#solution"
-                  className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800 shadow-lg transition"
+                  href="/contact"
+                  className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-[#9d96e9] text-white font-medium hover:bg-[#8b84dd] shadow-lg transition"
                 >
-                  Explore Product <span className="ml-2 font-mono">→</span>
+                  Book a demo
                 </a>
                 <Link
                   href="/contact"
                   className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 text-gray-900 font-medium hover:bg-white shadow-sm transition"
                 >
-                  Book a demo
+                  Explore Product <span className="ml-2 font-mono">→</span>
                 </Link>
               </div>
             </div>

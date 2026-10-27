@@ -123,7 +123,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-190 h-122.5 rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
+          <div className='w-190 h-122.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
              <form>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
