@@ -113,10 +113,10 @@ export default function Plans() {
               <h1 className="text-2xl">Ready to build your government contract pipeline.</h1>
             </div>
             <div className="flex p-2 h-auto  min-h-100">
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 1</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 2</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 3</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 4</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Included in all tiers</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Small Orgs</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Medium Orgs</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Large Orgs</div>
             </div>
           </div>
         </section>

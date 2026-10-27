@@ -105,7 +105,7 @@ export default function Contact(){
         </header>
       </div>
       <main className="mx-auto mt-5">
-         <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don&Apos;t be Shy </h1>
+         <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don&apos;t be Shy </h1>
         <div className='flex gap-10 '>
           <div className='mt-35 -ml-25'>
             <h2 className="flex items-center text-6xl font-bold text-slate-500 text-left gap-4"> Get in 
