@@ -121,6 +121,8 @@ export default function Contact(){
                <p className=' text-slate-500 mt-5'>Phone Number : </p>
                <p className=' text-black mt-5'>+44 7597474602</p>
 
+               <p className="mt-12 rounded-[80] bg-black px-5 py-3 font-semibold text-white text-center hover:bg-black">Avaiable Monday to Friday 9AM - 5PM GMT</p>
+
 
             </div>          
           <div className='w-190 h-122.5 rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
