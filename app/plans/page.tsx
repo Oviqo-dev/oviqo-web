@@ -96,7 +96,7 @@ export default function Plans() {
               className={`px-5 py-2 text-sm font-semibold rounded-full shadow-sm transition border ${
                 scrolled
                   ? 'bg-gray-900 text-white hover:bg-gray-800 border-transparent'
-                  : 'text-gray-900 bg-white/80 backdrop-blur-md border-gray-300 hover:bg-white'
+                  : 'text-white bg-gray-900 backdrop-blur-md hover:bg-gray-800'
               }`}
             >
               Book a demo
@@ -109,14 +109,18 @@ export default function Plans() {
 
         <section className="bg-white flex-1 h-full" id="solution">
           <div className="p-6 text-left text-black h-auto">
-            <div className="text-center mb-8 mt-5">
-              <h1 className="text-2xl">Ready to build your government contract pipeline.</h1>
+            <div className="flex">
+            <div className="text-left mb-8 ml-4 width-half flex-1">
+              <h1 className="text-3xl font-bold">Ready to build your government contract pipeline.</h1>
             </div>
+            
+            <div className="flex-1"></div>
+           </div> 
             <div className="flex p-2 h-auto  min-h-100">
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Included in all tiers</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Small Orgs</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Medium Orgs</div>
-              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl">Large Orgs</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">Included in all tiers</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">Small Orgs</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">Medium Orgs</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">Large Orgs</div>
             </div>
           </div>
         </section>
