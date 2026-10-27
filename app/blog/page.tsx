@@ -67,7 +67,7 @@ export default function Blog(){
             <Link
               href="/"
               className={`transition font-bold text-lg ${
-                scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-900 hover:text-white'
+                scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-900 hover:text-gray-600'
               }`}
             >
               OVIQO

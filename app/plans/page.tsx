@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -54,6 +55,7 @@ export default function Plans() {
         }
       `}</style>
 
+      <div className="flex flex-col h-screen">
       <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
         <header
           className={`mx-auto transition-all duration-300 flex items-center justify-between ${
@@ -66,7 +68,7 @@ export default function Plans() {
             <Link
               href="/"
               className={`transition font-bold text-lg ${
-                scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-900 hover:text-white'
+                scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-900 hover:text-gray-600'
               }`}
             >
               OVIQO
@@ -102,17 +104,25 @@ export default function Plans() {
           </div>
         </header>
       </div>
-       <main className="mx-auto max-w-lg mt-5">
-              <h1 className="text-4xl font-bold text-slate-900 text-center"> Plans </h1>
+       <main className="flex-1 flex flex-col">
+             
 
-                 <section className="bg-white py-24 px-6 scroll-mt-24" id="solution">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <h1>This is the next section</h1>
+        <section className="bg-white flex-1 h-full" id="solution">
+          <div className="p-6 text-left text-black h-auto">
+            <div className="text-center mb-8 mt-5">
+              <h1 className="text-2xl">Ready to build your government contract pipeline.</h1>
+            </div>
+            <div className="flex p-2 h-auto  min-h-100">
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 1</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 2</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 3</div>
+              <div className="flex-1 bg-[#f1f1f1] m-2 rounded-lg text-center h-auto pt-2">Card 4</div>
             </div>
           </div>
         </section>
+
       </main>
+      </div>
     
     </>
   );
