@@ -161,7 +161,7 @@ export default function Home() {
 
         <footer className="py-6 text-center text-xs text-gray-900 bg-white">
             <p>© 2026 OVIQO. All rights reserved.</p>
-            <p>Developed by Adl &amp; Ahad &amp; Saif.</p>
+            <p>Developed by Adl &amp; Ahad</p>
         </footer>
       </div>
     </>
