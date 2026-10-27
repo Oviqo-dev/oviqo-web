@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 export default function Contact(){
-  
+
     const [scrolled, setScrolled] = useState(false);
     
       useEffect(() => {
