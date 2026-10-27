@@ -106,7 +106,7 @@ export default function Contact(){
       </div>
       <main className="mx-auto mt-5">
          <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don&apos;t be Shy </h1>
-        <div className='flex flex-col gap-10 px-20 lg:flex-row lg:items-center lg:justify-center'>
+        <div className='flex flex-col gap-10 px-10 lg:flex-row lg:items-center lg:justify-center'>
           <div className=''>
 
             <h2 className="flex items-center text-6xl font-bold text-black text-left gap-4"> Get in 
