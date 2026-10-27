@@ -128,7 +128,7 @@ export default function Contact(){
               type="text"
               autoComplete="name"
               required
-              className="w-full rounded-lg border border-slate-600 p-3"
+              className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"
             />
           </div>
           <div>
@@ -142,7 +142,7 @@ export default function Contact(){
               type="text"
               autoComplete="email"
               required
-              className="w-full rounded-lg border border-slate-600 p-3"></input>
+              className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"></input>
           </div>
           <div>
             <label htmlFor="message" className="mb-2 mt-2 block text-slate-600">
@@ -154,7 +154,7 @@ export default function Contact(){
               name="message"
               rows={5}
               required
-              className="w-full rounded-lg border border-slate-600 p-3"
+              className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"
             />
           </div>
 
