@@ -103,6 +103,9 @@ export default function About(){
           </div>
         </header>
       </div>
+       <main className="mx-auto max-w-lg mt-5">
+              <h1 className="text-4xl font-bold text-slate-900"> About us </h1>
+      </main>
         
         
         

@@ -102,13 +102,18 @@ export default function Plans() {
           </div>
         </header>
       </div>
-        <section className="bg-white py-24 px-6 scroll-mt-24" id="solution">
+       <main className="mx-auto max-w-lg mt-5">
+              <h1 className="text-4xl font-bold text-slate-900 text-center"> Plans </h1>
+
+                 <section className="bg-white py-24 px-6 scroll-mt-24" id="solution">
           <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
               <h1>This is the next section</h1>
             </div>
           </div>
         </section>
+      </main>
+    
     </>
   );
 }

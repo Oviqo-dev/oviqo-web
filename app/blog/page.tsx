@@ -103,6 +103,9 @@ export default function Blog(){
           </div>
         </header>
       </div>
+       <main className="mx-auto max-w-lg mt-5">
+              <h1 className="text-4xl font-bold text-slate-900">Blog </h1>
+      </main>
         
         
     
