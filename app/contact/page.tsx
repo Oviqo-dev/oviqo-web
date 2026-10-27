@@ -112,9 +112,8 @@ export default function Contact(){
                <span className="inline-block h-1 w-25 bg-black"> </span> </h2>
             <h2 className="text-7xl font-bold text-black text-left"> touch with us  </h2>
             
-            <p className=' text-slate-500 mt-5 text-1xl'>We're here to help ! Wether you have a question about our
-              services, need assistance with an enquiry about the business 
-            </p>
+            <p className=' text-slate-500 mt-5 text-1xl'>We’re here to help! Whether you have a question about our 
+              services or an enquiry about Oviqo, we’d love to hear from you.</p>
               <p className=' text-slate-500 mt-5'>Company Enquiry Email : </p>
               <p className=' text-black mt-5'>oviqoteam@gmail.com</p>
                <p className=' text-slate-500 mt-5'>Phone Number : </p>
