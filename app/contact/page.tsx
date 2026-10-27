@@ -106,16 +106,24 @@ export default function Contact(){
       </div>
       <main className="mx-auto mt-5">
          <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don&apos;t be Shy </h1>
-        <div className='flex flex-col gap-10 px-6 lg:flex-row lg:items-center lg:justify-center'>
+        <div className='flex flex-col gap-10 px-20 lg:flex-row lg:items-center lg:justify-center'>
           <div className=''>
 
-            <h2 className="flex items-center text-6xl font-bold text-slate-500 text-left gap-4"> Get in 
-               <span className="inline-block h-1 w-25 bg-slate-500"> </span> </h2>
-            <h2 className="text-7xl font-bold text-slate-500 text-left"> touch with us  </h2>
+            <h2 className="flex items-center text-6xl font-bold text-black text-left gap-4"> Get in 
+               <span className="inline-block h-1 w-25 bg-black"> </span> </h2>
+            <h2 className="text-7xl font-bold text-black text-left"> touch with us  </h2>
             
+            <p className=' text-slate-500 mt-5 text-1xl'>We're here to help ! Wether you have a question about our
+              services, need assistance with an enquiry about the business 
+            </p>
+              <p className=' text-slate-500 mt-5'>Company Enquiry Email : </p>
+              <p className=' text-black mt-5'>oviqoteam@gmail.com</p>
+               <p className=' text-slate-500 mt-5'>Phone Number : </p>
+               <p className=' text-black mt-5'>+44 7597474602</p>
+
 
             </div>          
-          <div className='w-125 h-122.5 rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
+          <div className='w-190 h-122.5 rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
              <form>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
