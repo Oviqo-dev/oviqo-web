@@ -105,7 +105,7 @@ export default function Contact(){
         </header>
       </div>
       <main className="mx-auto mt-5">
-         <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don't be Shy </h1>
+         <h1 className="mt-3 text-slate-600 text-center text-3xl"> Don&Apos;t be Shy </h1>
         <div className='flex gap-10 '>
           <div className='mt-35 -ml-25'>
             <h2 className="flex items-center text-6xl font-bold text-slate-500 text-left gap-4"> Get in 
@@ -114,7 +114,7 @@ export default function Contact(){
             
 
             </div>          
-          <div className='w-[500px] h-[490px] rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
+          <div className='w-125 h-122.5 rounded-[40px] bg-gray-200 p-10 mt-16 ml-50'>
              <form>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
