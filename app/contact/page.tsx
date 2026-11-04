@@ -162,7 +162,7 @@ export default function Contact(){
               name="message"
               rows={5}
               required
-              className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"
+              className="w-full rounded-lg border border-slate-600 text-slate-600 p-3 resize-none"
             />
           </div>
 
