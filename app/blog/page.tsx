@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Carousel from "../../components/carousel";
 
 
 export default function Blog(){
@@ -94,8 +95,8 @@ export default function Blog(){
               href="/contact"
               className={`px-5 py-2 text-sm font-semibold rounded-full shadow-sm transition border ${
                 scrolled
-                  ? 'bg-gray-900 text-white hover:bg-gray-800 border-transparent'
-                  : 'text-gray-900 bg-white/80 backdrop-blur-md border-gray-300 hover:bg-white'
+                  ? 'bg-[#9d96e9] text-white hover:bg-[#9d96e9] border-transparent'
+                  : 'text-white bg-[#9d96e9] backdrop-blur-md hover:bg-[#8b84dd] border-[#9d96e9]'
               }`}
             >
               Book a demo
@@ -103,10 +104,33 @@ export default function Blog(){
           </div>
         </header>
       </div>
-       <main className="mx-auto max-w-lg mt-5">
-              <h1 className="text-4xl font-bold text-slate-900">Blog </h1>
-      </main>
-              <footer className="mt-10 py-6 text-center text-xs text-gray-900 bg-white">
+
+
+          <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pl-7 pr-7">
+            <section>
+            <h1 className="text-3xl font-bold text-slate-900 py-6 text-left">
+              The Resource Vault.
+            </h1>
+
+            <div className="text-black w-full">
+              <div className="flex w-full text-black text-center gap-4">
+                <div className="flex-1 rounded-sm bg-gray-200 p-3">Blog</div>
+                <div className="flex-1 rounded-sm bg-gray-200 p-3">News</div>
+                <div className="flex-1 rounded-sm bg-gray-200 p-3">Case Studies</div>
+                <div className="flex-1 rounded-sm bg-gray-200 p-3">Search</div>
+              </div>
+            </div>
+
+            <Carousel/>
+
+            </section>
+
+            
+          </main>
+
+
+
+        <footer className="mt-10 py-6 text-center text-xs text-gray-900 bg-white">
             <p>© 2026 OVIQO. All rights reserved.</p>
             <p>Developed by Adl &amp; Ahad.</p>
         </footer>
