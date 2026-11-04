@@ -169,7 +169,7 @@ export default function Contact(){
           
           <button
             type="submit"
-            className="mt-2 rounded-[80] bg-slate-600 px-6 py-3 font-semibold text-white hover:bg-gray-700"
+            className="mt-2 rounded-[80] bg-[#9d96e9] px-6 py-3 font-semibold text-white hover:bg-[#7770c5]"
           > Send message
           </button>
 
