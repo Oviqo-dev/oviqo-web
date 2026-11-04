@@ -105,18 +105,20 @@ export default function Plans() {
           </div>
         </header>
       </div>
-       <main className="flex-1 flex flex-col">
+      <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between">
              
 
         <section className="bg-white flex-1 h-full" id="solution">
           <div className="p-6 text-left text-black h-auto">
             <div className="flex">
-            <div className="text-left mb-8 ml-4 width-half flex-1">
+              <div className="text-left mb-8 ml-4 width-half flex-1">
               <h1 className="text-3xl font-bold">Ready to build your government contract pipeline.</h1>
-            </div>
+              </div>
             
-            <div className="flex-1"></div>
-           </div> 
+              <div className="flex-1 text-right text-gray-500 max-w-80 pr-5">Simple and transparent plans to help you win the contract, with support from our team every step of the way.</div>
+            </div> 
+
+
             <div className="flex p-2 h-auto  min-h-100">
               <div className="flex-1 flex flex-col bg-[#f6f6f6] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">
                 Included in all tiers
