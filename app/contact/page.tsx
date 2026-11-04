@@ -123,7 +123,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-190 h-122.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
+          <div className='w-190 h-145.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
              <form>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
@@ -160,7 +160,7 @@ export default function Contact(){
             <textarea
               id="message"
               name="message"
-              rows={5}
+              rows={8}
               required
               className="w-full rounded-lg border border-slate-600 text-slate-600 p-3 resize-none"
             />
