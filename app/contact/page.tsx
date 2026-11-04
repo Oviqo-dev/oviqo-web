@@ -126,7 +126,7 @@ export default function Contact(){
           <div className='w-190 h-122.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
              <form>
                 <div className=''>
-            <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
+            <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
               Name
             </label>
 
@@ -140,7 +140,7 @@ export default function Contact(){
             />
           </div>
           <div>
-            <label htmlFor="name" className="mb-2 mt-2 block text-slate-600">
+            <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
               Email
             </label>
 
@@ -153,7 +153,7 @@ export default function Contact(){
               className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"></input>
           </div>
           <div>
-            <label htmlFor="message" className="mb-2 mt-2 block text-slate-600">
+            <label htmlFor="message" className="mb-2 mt-2 block text-black font-semibold">
               Message
             </label>
 
