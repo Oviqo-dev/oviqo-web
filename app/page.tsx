@@ -54,7 +54,7 @@ export default function Home() {
       `}</style>
 
       {/* Floating Sticky Header Container */}
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
+      <div className="sticky top-0 z-50 w-full pt-4 px-4 pl-0 pr-0 transition-all duration-300">
         <header
           className={`mx-auto transition-all duration-300 flex items-center justify-between ${
             scrolled

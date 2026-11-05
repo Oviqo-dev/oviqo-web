@@ -1,11 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Carousel from "../../components/carousel";
 
 
 export default function Blog(){
+    const carouselData = useRef([
+      {
+        title: 'item',
+        color: 'red'
+      },
+      {
+        title: 'item2',
+        color: 'blue'
+      },
+      {
+        title: 'item3',
+        color: 'green'
+      }
+
+    ]);
+
+    const [ activeItemIndex, setActiveItemIndex] = useState(1);
+
     const [scrolled, setScrolled] = useState(false);
     
       useEffect(() => {
@@ -56,7 +74,7 @@ export default function Blog(){
       `}</style>
 
       {/* Floating Sticky Header Container */}
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
+      <div className="sticky top-0 z-50 w-full pt-4 px-4 pl-0 pr-0 transition-all duration-300">
         <header
           className={`mx-auto transition-all duration-300 flex items-center justify-between ${
             scrolled
@@ -106,22 +124,20 @@ export default function Blog(){
       </div>
 
 
-          <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pl-7 pr-7">
+          <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 pl-7 pr-7">
             <section>
             <h1 className="text-3xl font-bold text-slate-900 py-6 text-left">
               The Resource Vault.
             </h1>
 
-            <div className="text-black w-full">
-              <div className="flex w-full text-black text-center gap-4">
-                <div className="flex-1 rounded-sm bg-gray-200 p-3">Blog</div>
-                <div className="flex-1 rounded-sm bg-gray-200 p-3">News</div>
-                <div className="flex-1 rounded-sm bg-gray-200 p-3">Case Studies</div>
-                <div className="flex-1 rounded-sm bg-gray-200 p-3">Search</div>
-              </div>
-            </div>
+            
 
-            <Carousel/>
+            <Carousel
+              activeItemIndex={activeItemIndex}
+              setActiveItemIndex={setActiveItemIndex}
+              carouselData={carouselData.current}
+            
+            />
 
             </section>
 
