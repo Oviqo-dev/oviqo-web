@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Carousel from "../../components/carousel";
 
 
 export default function Blog(){
-    const carouselData = useRef([
+    const carouselData = [
       {
         title: 'item',
         color: 'red'
@@ -20,7 +20,7 @@ export default function Blog(){
         color: 'green'
       }
 
-    ]);
+    ];
 
     const [ activeItemIndex, setActiveItemIndex] = useState(1);
 
@@ -135,7 +135,7 @@ export default function Blog(){
             <Carousel
               activeItemIndex={activeItemIndex}
               setActiveItemIndex={setActiveItemIndex}
-              carouselData={carouselData.current}
+              carouselData={carouselData}
             
             />
 
