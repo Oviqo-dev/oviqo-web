@@ -8,16 +8,17 @@ import Carousel from "../../components/carousel";
 export default function Blog(){
     const carouselData = [
       {
-        title: 'item',
-        color: 'red'
+        title: 'Change in tenders',
+        type: 'Article'
+        
       },
       {
-        title: 'item2',
-        color: 'blue'
+        title: 'How to write a tender',
+        type: 'Blog'  
       },
       {
-        title: 'item3',
-        color: 'green'
+        title: 'NHS awards lift tender',
+        type: 'News'
       }
 
     ];
