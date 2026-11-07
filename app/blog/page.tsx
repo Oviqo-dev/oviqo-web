@@ -54,9 +54,38 @@ export default async function Blog() {
 
           
           <Carousel carouselData={finalCarouselData} />
+          
+          <div className="text-black flex mt-5">
+            <div className="ml-2 w-10 pl-2 pr-2 rounded-md bg-gray-200 text-center hover:bg-[#EBEAFB]">All</div>
+            <div className="ml-2 w-20 pl-2 pr-2 rounded-md bg-gray-200 text-center">Reports</div>
+            <div className="ml-2 w-15 pl-2 pr-2 rounded-md bg-gray-200 text-center">News</div>
+            <div className="ml-2 w-20 pl-2 pr-2 rounded-md bg-gray-200 text-center">Articles</div>
+            <div className="ml-2 w-15 pl-2 pr-2 rounded-md bg-gray-200 text-center">Blog</div>  
+          </div>
+
+
+          <div className="flex">
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+          </div>
+
+          <div className="flex">
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+          </div>
+
+          <div className="flex">
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+          </div>
 
           
         </section>
+
+          
       </main>
 
       <footer className="mt-10 py-6 text-center text-xs text-gray-900 bg-white">
