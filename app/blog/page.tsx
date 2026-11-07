@@ -7,7 +7,7 @@ import FloatingHeader from "../../components/navBar";
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{
+]|order(publishedAt desc)[0...4]{
   _id, 
   type, 
   author, 
@@ -54,6 +54,8 @@ export default async function Blog() {
 
           
           <Carousel carouselData={finalCarouselData} />
+
+          
         </section>
       </main>
 
