@@ -5,20 +5,28 @@ import Link from 'next/link';
 import Carousel from "../../components/carousel";
 
 
+
+
 export default function Blog(){
     const carouselData = [
       {
         title: 'Change in tenders',
-        type: 'Article'
+        type: 'Article',
+        author: 'Ahad Alam',
+        authorTitle:'Co-Founder, Oviqo'
         
       },
       {
         title: 'How to write a tender',
-        type: 'Blog'  
+        type: 'Blog', 
+        author: 'Adl Alam',
+        authorTitle:'Co-Founder, Oviqo'
       },
       {
         title: 'NHS awards lift tender',
-        type: 'News'
+        type: 'News',
+        author: 'Ahad Alam',
+        authorTitle:'Co-Founder, Oviqo'
       }
 
     ];
@@ -125,9 +133,9 @@ export default function Blog(){
       </div>
 
 
-          <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 pl-7 pr-7">
+          <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 mt-0 pl-7 pr-7">
             <section>
-            <h1 className="text-3xl font-bold text-slate-900 py-6 text-left">
+            <h1 className="text-3xl font-bold text-slate-900 pt-0 py-6 text-left">
               The Resource Vault.
             </h1>
 

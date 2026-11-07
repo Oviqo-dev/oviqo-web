@@ -1,8 +1,13 @@
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
+import Image from 'next/image';
+import userProfile from '../public/memoji.png';
+import blogImage from '../public/blogImage.png'
 
 interface CarouselItems{
     title: string;
     type: string;
+    author: string;
+    authorTitle:string;
 }
 
 interface CarouselProps{
@@ -12,8 +17,12 @@ interface CarouselProps{
 }
 
 
+
+
+
 export default function Carousel({activeItemIndex, setActiveItemIndex, carouselData}:CarouselProps)
 {
+
     return(
         <>
         <div className="text-black flex items-center gap-2">
@@ -32,15 +41,35 @@ export default function Carousel({activeItemIndex, setActiveItemIndex, carouselD
         </button>
 
 
-        <div className="w-full max-w-full grid bg-gray-200 rounded-md h-100">
+        <div className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100">
             <div className="flex">
-                <div className="flex-1 max-w-[40%] flex items-center justify-center">
-                    <div className="bg-white rounded-md p-2 pt-0 pb-0"><div>{carouselData[activeItemIndex].type}</div></div>
+                <div className="flex-1 max-w-[40%] flex flex-col pl-5 justify-center">
+                    <div className="bg-white rounded-md p-2 mb-3 pt-0 pb-0 max-w-15 flex justify-center items-center"><div>{carouselData[activeItemIndex].type}</div></div>
                     <div className="text-4xl " >{carouselData[activeItemIndex].title}</div>
+                    <div className="justify-left flex pt-2 ml-0 pl-0">
+                        <div className="w-12.5 h-12.5 rounded-full bg-white ">
+                            
+                            <Image 
+                                src={userProfile} 
+                                alt="Profile picture of the author"
+                                 
+                                placeholder="blur"
+                                className="w-12 h-12 rounded-full"
+                            />
+
+                            
+                        
+                        </div>
+                        <div className="pl-2">
+
+                        <p>{carouselData[activeItemIndex].author}</p>
+                        <p>{carouselData[activeItemIndex].authorTitle}</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="flex-1 max-w-[60%] bg-white m-3 rounded-lg">
-
+                    <Image src={blogImage} alt="blogImage" className="w-full h-full object-cover rounded-lg"/>
                 </div>
             
             </div>
