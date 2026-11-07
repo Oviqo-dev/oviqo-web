@@ -115,7 +115,7 @@ export default function Contact(){
             <p className=' text-slate-500 mt-5 text-1xl'>We’re here to help! Whether you have a question about our 
               services or an enquiry about Oviqo, we’d love to hear from you.</p>
               <p className=' text-slate-500 mt-5'>Company Enquiry Email : </p>
-              <p className=' text-black mt-5'>oviqoteam@gmail.com</p>
+              <p className=' text-black mt-5'>oviqo@hotmail.com</p>
                <p className=' text-slate-500 mt-5'>Phone Number : </p>
                <p className=' text-black mt-5'>+44 7597474602</p>
 
