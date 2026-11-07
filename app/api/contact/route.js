@@ -19,12 +19,17 @@ export async function POST(request) {
             );
         }
   
-        const  { data, error }  = await resend.emails.send({
+        const  { data,error}  = await resend.emails.send({
         from: 'Oviqo Team <info@send.oviqo.co.uk>',
         to: 'oviqo@hotmail.com',
         replyTo: email,
         subject:  `New OVIQO enquiry from ${name}`,
-        text: `Name: ${name} Email: ${email} Message:${message}`,
+        text: `Name: ${name}
+        
+        Email: ${email} 
+        
+        Message:
+        ${message}`,
         });
         if(error){
             console.error(error);
