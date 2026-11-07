@@ -23,13 +23,18 @@ export async function POST(request) {
         from: 'Oviqo Team <info@send.oviqo.co.uk>',
         to: 'oviqo@hotmail.com',
         replyTo: email,
-        subject:  `New OVIQO enquiry from ${name}`,
-        text: `Name: ${name}
+        subject:  `OVIQO enquiry from ${name}`,
+        text: `You have received a new enquiry from your OVIQO website.
         
+        Name: ${name}
         Email: ${email} 
         
         Message:
-        ${message}`,
+
+        ${message}
+
+        -------------------------
+        Sent via the OVIQO contact form`,
         });
         if(error){
             console.error(error);
