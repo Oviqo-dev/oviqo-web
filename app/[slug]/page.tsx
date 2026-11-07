@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { PortableText, type SanityDocument } from "next-sanity";
 import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import { client } from "@/sanity/client";
@@ -13,19 +14,42 @@ const urlFor = (source: SanityImageSource) =>
 
 const options = { next: { revalidate: 30 } };
 
-export default async function PostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-    
-  const post = await client.fetch<SanityDocument>(POST_QUERY, await params, options);
+export async function generateStaticParams() {
+  const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)]{ "slug": slug.current }`;
+  const posts = await client.fetch<{ slug: string }[]>(SLUGS_QUERY);
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+
+async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+
+  const post = await client.fetch<SanityDocument>(
+    POST_QUERY,
+    { slug: resolvedParams.slug },
+    options
+  );
+
+  if (!post) {
+    return (
+      <div className="flex flex-col gap-4">
+        <Link href="/blog" className="hover:underline">
+          ← Back to posts
+        </Link>
+        <h1 className="text-2xl font-bold mt-4">Post not found</h1>
+      </div>
+    );
+  }
+
   const postImageUrl = post.image
     ? urlFor(post.image)?.width(550).height(310).url()
     : null;
 
   return (
-    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4 text-black">
+    <>
       <Link href="/" className="hover:underline">
         ← Back to posts
       </Link>
@@ -41,9 +65,21 @@ export default async function PostPage({
       )}
       <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
       <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+        {post.publishedAt && (
+          <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+        )}
         {Array.isArray(post.body) && <PortableText value={post.body} />}
       </div>
+    </>
+  );
+}
+
+export default function PostPage(props: { params: Promise<{ slug: string }> }) {
+  return (
+    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4 text-black">
+      <Suspense fallback={<div className="animate-pulse">Loading post...</div>}>
+        <PostContent params={props.params} />
+      </Suspense>
     </main>
   );
 }
