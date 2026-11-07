@@ -7,6 +7,9 @@ import Link from 'next/link';
 export default function Contact(){
 
     const [scrolled, setScrolled] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState('');
     
       useEffect(() => {
         const handleScroll = () => {
@@ -17,6 +20,48 @@ export default function Contact(){
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleSubmit = async (e)=> {
+       e.preventDefault(); 
+
+         setLoading(true);
+         setStatus('');
+
+
+        const formData = new FormData(e.target);
+
+        const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        };
+
+          try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+        const result = await response.json();
+
+    if (response.ok) {
+      setStatus('Thank you! Your message has been sent.');
+      e.target.reset();
+    } else {
+      setStatus(result.error || 'Something went wrong.');
+    }
+
+  } catch (error) {
+    setStatus('Unable to send your message. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+
+
+    }
+
     return(
         <>
         <style jsx global>{`
@@ -24,7 +69,7 @@ export default function Contact(){
           scroll-behavior: smooth;
         }
 
-        .slide-link {
+        .slide-link { 
           position: relative;
           text-decoration: none;
           padding-bottom: 2px;
@@ -124,7 +169,7 @@ export default function Contact(){
 
             </div>          
           <div className='w-190 h-145.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
-             <form>
+             <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
               Name
@@ -140,14 +185,14 @@ export default function Contact(){
             />
           </div>
           <div>
-            <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
+            <label htmlFor="email" className="mb-2 mt-2 block text-black font-semibold">
               Email
             </label>
 
             <input
               id="email"
               name="email"
-              type="text"
+              type="email"
               autoComplete="email"
               required
               className="w-full rounded-lg border border-slate-600 text-slate-600 p-3"></input>
@@ -166,12 +211,21 @@ export default function Contact(){
             />
           </div>
 
-          
           <button
             type="submit"
-            className="mt-2 rounded-[80] bg-[#9d96e9] px-6 py-3 font-semibold text-white hover:bg-[#7770c5]"
-          > Send message
+            disabled={loading}
+            className="mt-2 rounded-[80px] bg-[#9d96e9] px-6 py-3 font-semibold text-white hover:bg-[#7770c5] disabled:opacity-50"
+            >
+              {loading ? 'Sending...' : 'Send message'}
           </button>
+
+          {status && (
+  <p className="mt-4 text-sm text-slate-700">
+    {status}
+  </p>
+)}
+
+  
 
              </form>
           </div>
