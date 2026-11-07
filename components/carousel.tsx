@@ -45,6 +45,7 @@ export default function Carousel({ carouselData }: CarouselProps) {
         <HiArrowSmLeft />
       </button>
 
+        
       <div className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100">
         <div className="flex">
           <div className="flex-1 max-w-[40%] flex flex-col pl-5 justify-center">
