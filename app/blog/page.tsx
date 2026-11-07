@@ -55,7 +55,7 @@ export default async function Blog() {
           
           <Carousel carouselData={finalCarouselData} />
           
-          <div className="text-black flex mt-5">
+          <div className="text-black flex mt-5 ml-8">
             <div className="ml-2 w-10 pl-2 pr-2 rounded-md bg-gray-200 text-center hover:bg-[#EBEAFB]">All</div>
             <div className="ml-2 w-20 pl-2 pr-2 rounded-md bg-gray-200 text-center">Reports</div>
             <div className="ml-2 w-15 pl-2 pr-2 rounded-md bg-gray-200 text-center">News</div>
@@ -65,7 +65,11 @@ export default async function Blog() {
 
 
           <div className="flex">
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
+            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10">
+              <div className="w-[90%] h-[60%] bg-gray-200 rounded-sm mt-2 "></div>
+              <h2>Title</h2>
+              <p>Paragraph</p>
+            </div>
             <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
             <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
           </div>
@@ -83,6 +87,17 @@ export default async function Blog() {
           </div>
 
           
+
+          
+        </section>
+        <section className="flex items-center justify-center mt-4">
+
+          <div className="flex">
+            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">1</div>
+            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">2</div>
+            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">3</div>
+            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">4</div>
+          </div>
         </section>
 
           
