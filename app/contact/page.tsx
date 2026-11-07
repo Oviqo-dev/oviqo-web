@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import type { FormEvent } from 'react';
 import Link from 'next/link';
 
 
@@ -20,14 +21,14 @@ export default function Contact(){
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleSubmit = async (e)=> {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)=> {
        e.preventDefault(); 
 
          setLoading(true);
          setStatus('');
 
-
-        const formData = new FormData(e.target);
+        const form = e.currentTarget;
+        const formData = new FormData(form);
 
         const data = {
         name: formData.get('name'),
@@ -48,7 +49,7 @@ export default function Contact(){
 
     if (response.ok) {
       setStatus('Thank you! Your message has been sent.');
-      e.target.reset();
+      form.reset();
     } else {
       setStatus(result.error || 'Something went wrong.');
     }
