@@ -6,8 +6,7 @@ import Carousel from "../../components/carousel";
 
 
 
-
-export default function Blog(){
+export default  function Blog(){
     const carouselData = [
       {
         title: 'Change in tenders',
@@ -31,6 +30,7 @@ export default function Blog(){
 
     ];
 
+   
     const [ activeItemIndex, setActiveItemIndex] = useState(1);
 
     const [scrolled, setScrolled] = useState(false);
@@ -45,6 +45,7 @@ export default function Blog(){
     }, []);
     
     return(
+
         <>
         <style jsx global>{`
         html {
