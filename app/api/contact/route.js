@@ -34,7 +34,7 @@ export async function POST(request) {
         ${message}
 
         -------------------------
-        Sent via the OVIQO contact form`,
+        Sent via the OVIQO Website`,
         });
         if(error){
             console.error(error);
