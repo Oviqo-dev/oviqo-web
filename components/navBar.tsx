@@ -37,7 +37,7 @@ export default function FloatingHeader() {
         }
       `}</style>
 
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
+      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300 pl-0 pr-0">
         <header
           className={`mx-auto transition-all duration-300 flex items-center justify-between ${
             scrolled

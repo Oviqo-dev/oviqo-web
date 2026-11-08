@@ -3,19 +3,33 @@ import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/client";
 import Carousel from "../../components/carousel";
 import FloatingHeader from "../../components/navBar";
+import Link from 'next/link';
+import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
+import Image from 'next/image';
+import blogImage from '../../public/blogImage.png';
+
+const { projectId, dataset } = client.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? createImageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
 
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...4]{
+]|order(publishedAt desc)[0...9]{
   _id, 
   type, 
   author, 
   authortitle, 
   title, 
   slug, 
-  publishedAt
+  image,
+  publishedAt,
+  excerpt
 }`;
+
+
 
 const options = { next: { revalidate: 30 } };
 
@@ -24,7 +38,7 @@ export default async function Blog() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
 
-  const carouselData = posts.map((post) => ({
+  const carouselData = posts.slice(0, 4).map((post) => ({
     title: post.title,
     type: post.type || 'Article',
     author: post.author || 'Oviqo Team',
@@ -55,7 +69,7 @@ export default async function Blog() {
           
           <Carousel carouselData={finalCarouselData} />
           
-          <div className="text-black flex mt-5 ml-8">
+          <div className="text-black flex mt-5 ml-0 p-0">
             <div className="ml-2 w-10 pl-2 pr-2 rounded-md bg-gray-200 text-center hover:bg-[#EBEAFB]">All</div>
             <div className="ml-2 w-20 pl-2 pr-2 rounded-md bg-gray-200 text-center">Reports</div>
             <div className="ml-2 w-15 pl-2 pr-2 rounded-md bg-gray-200 text-center">News</div>
@@ -64,41 +78,71 @@ export default async function Blog() {
           </div>
 
 
-          <div className="flex">
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10">
-              <div className="w-[90%] h-[60%] bg-gray-200 rounded-sm mt-2 "></div>
-              <h2>Title</h2>
-              <p>Paragraph</p>
-            </div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
-          </div>
 
-          <div className="flex">
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
-          </div>
 
-          <div className="flex">
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-10"></div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
-            <div className="w-[30%] h-50 bg-gray-200 rounded-md mt-5 ml-5"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 ml-2">
+            {posts.map((post) => {
+              
+              const imageUrl = post.image
+                ? urlFor(post.image)?.width(400).height(250).url()
+                : null;
+
+              return (
+                <Link 
+                  key={post._id} 
+                  href={`/${post.slug.current}`}
+                  className="bg-white rounded-lg  transition flex flex-col h-65"
+                >
+                  
+                  <div className="w-full h-40 bg-gray-100 relative rounded-lg overflow-hidden">
+                    {imageUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img 
+                        src={imageUrl} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      
+                      <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">
+                        <Image 
+                          src={blogImage} 
+                          alt="Profile picture of the author"
+                          placeholder="blur"
+                          className="w-full h-40"
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                 
+                  <div className=" flex flex-col justify-between flex-1">
+                    <div>
+                     <p className="text-gray-600 mt-2">
+                      {post.type}
+                     </p>
+                      <h2 className="text-lg font-bold text-black mt-0 line-clamp-1">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600">
+                        {post.excerpt|| 'Click article to view text'}
+                      </p>
+                    </div>
+
+                   
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           
 
           
-        </section>
-        <section className="flex items-center justify-center mt-4">
 
-          <div className="flex">
-            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">1</div>
-            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">2</div>
-            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">3</div>
-            <div className="bg-gray-200 rounded-full w-6 h-6 text-center ml-2 text-black">4</div>
-          </div>
+          
         </section>
+        
 
           
       </main>
