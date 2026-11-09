@@ -5,6 +5,7 @@ import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import Image from 'next/image';
 import userProfile from '../public/memoji.png';
 import blogImage from '../public/blogImage.png';
+import Link from 'next/link';
 
 interface CarouselItems {
   title: string;
@@ -22,7 +23,6 @@ export default function Carousel({ carouselData }: CarouselProps) {
   // Move index state directly inside the Carousel component
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
-  // Safety fallback if no data is present
   if (!carouselData || carouselData.length === 0) {
     return null;
   }
@@ -46,7 +46,10 @@ export default function Carousel({ carouselData }: CarouselProps) {
       </button>
 
         
-      <div className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100">
+      <Link 
+        href={currentItem.slug ? `/${currentItem.slug}` : '#'}
+        className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100 transition hover:opacity-95"
+      >
         <div className="flex">
           <div className="flex-1 max-w-[40%] flex flex-col pl-5 justify-center">
             <div className="bg-white rounded-md p-2 mb-3 pt-0 pb-0 max-w-15 flex justify-center items-center">
@@ -69,11 +72,11 @@ export default function Carousel({ carouselData }: CarouselProps) {
             </div>
           </div>
 
-          <div className="flex-1 max-w-[60%] bg-white m-3 rounded-lg">
+          <div className="flex-1 max-w-[60%] bg-white m-3 rounded-lg overflow-hidden">
             <Image src={blogImage} alt="blogImage" className="w-full h-full object-cover rounded-lg"/>
           </div>
         </div>
-      </div>
+      </Link>
 
 
       <button 

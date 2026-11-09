@@ -132,12 +132,12 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <a
+                <Link
                   href="/contact"
                   className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-[#9d96e9] text-white font-medium hover:bg-[#8b84dd] shadow-lg transition"
                 >
                   Book a demo
-                </a>
+                </Link>
                 <Link
                   href="/contact"
                   className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 text-gray-900 font-medium hover:bg-white shadow-sm transition"
