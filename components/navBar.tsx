@@ -54,7 +54,7 @@ export default function FloatingHeader() {
           <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium">
             <Link href="/" className="slide-link text-gray-700 hover:text-gray-900">Solutions</Link>
             <Link href="/plans" className="slide-link text-gray-700 hover:text-gray-900">Plans</Link>
-            <Link href="/blog" className="slide-link text-gray-700 hover:text-gray-900">Blog</Link>
+            <Link href="/resource" className="slide-link text-gray-700 hover:text-gray-900">Resources</Link>
             <Link href="/about" className="slide-link text-gray-700 hover:text-gray-900">About us</Link>
           </nav>
 

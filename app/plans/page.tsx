@@ -15,7 +15,7 @@ export default function Plans() {
              
 
         <section className="bg-white flex-1 h-full" id="solution">
-          <div className="p-2 pt-4 text-left text-black h-auto">
+          <div className="p-2 pt-0 text-left text-black h-auto">
             <div className="flex">
               <div className="text-left mb-8 ml-4 width-half flex-1">
               <h1 className="text-3xl font-bold">Ready to build your government contract pipeline.</h1>

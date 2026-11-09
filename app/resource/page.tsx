@@ -28,7 +28,9 @@ const POSTS_QUERY = `*[
   slug, 
   image,
   publishedAt,
-  excerpt
+  excerpt,
+  pfpimage,
+
 }`;
 
 const POSTS_COUNT_QUERY = `count(*[
@@ -84,11 +86,15 @@ async function BlogContent({
     author: post.author || 'Oviqo Team',
     authorTitle: post.authortitle || 'Co-Founder, Oviqo',
     slug: post.slug.current,
+    imageUrl: post.image ? urlFor(post.image)?.url() : null,
+    pfpUrl: post.pfpimage ? urlFor(post.pfpimage)?.width(100).height(100).url() : null,
+
+    
   }));
 
   const finalCarouselData = carouselData.length > 0 ? carouselData : [
     {
-      title: selectedType ? `No ${selectedType.toLowerCase()} found` : 'No posts found in Sanity yet',
+      title: selectedType ? `No ${selectedType.toLowerCase()} found` : 'Posts failed to load',
       type: 'Notice',
       author: 'Ahad Alam',
       authorTitle: 'Co-Founder, Oviqo',
@@ -118,7 +124,7 @@ async function BlogContent({
             return (
               <Link
                 key={cat.label}
-                href={cat.value ? `/blog?type=${cat.value}` : `/blog`}
+                href={cat.value ? `/resource?type=${cat.value}` : `/resource`}
                 className={`ml-2 ${cat.width} py-1 rounded-md text-center text-sm transition ${
                   isActive 
                     ? "bg-[#EBEAFB] font-semibold" 
@@ -140,7 +146,7 @@ async function BlogContent({
             return (
               <Link 
                 key={post._id} 
-                href={`/${post.slug.current}`}
+                href={`resource/${post.slug.current}`}
                 className="bg-white rounded-lg transition flex flex-col h-65"
               >
                 <div className="w-full h-40 bg-gray-100 relative rounded-lg overflow-hidden">
@@ -184,7 +190,7 @@ async function BlogContent({
         <div className="flex justify-center items-center gap-4 ml-0 mt-10 mb-6">
           {page > 1 ? (
             <Link
-              href={`/blog?${selectedType ? `type=${selectedType}&` : ''}page=${page - 1}`}
+              href={`/resource?${selectedType ? `type=${selectedType}&` : ''}page=${page - 1}`}
               className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm font-medium text-black transition flex items-center justify-center"
             >
               <HiArrowSmLeft className="w-5 h-5"/>
@@ -201,7 +207,7 @@ async function BlogContent({
 
           {page < totalPages ? (
             <Link
-              href={`/blog?${selectedType ? `type=${selectedType}&` : ''}page=${page + 1}`}
+              href={`/resource?${selectedType ? `type=${selectedType}&` : ''}page=${page + 1}`}
               className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm font-medium text-black transition flex items-center justify-center"
             >
               <HiArrowSmRight className="w-5 h-5"/>

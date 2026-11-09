@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import Image from 'next/image';
 import userProfile from '../public/memoji.png';
-import blogImage from '../public/blogImage.png';
 import Link from 'next/link';
 
 interface CarouselItems {
@@ -13,6 +12,8 @@ interface CarouselItems {
   author: string;
   authorTitle: string;
   slug?: string;
+  imageUrl?: string | null;
+  pfpUrl?: string | null;
 }
 
 interface CarouselProps {
@@ -20,7 +21,6 @@ interface CarouselProps {
 }
 
 export default function Carousel({ carouselData }: CarouselProps) {
-  // Move index state directly inside the Carousel component
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   if (!carouselData || carouselData.length === 0) {
@@ -31,7 +31,6 @@ export default function Carousel({ carouselData }: CarouselProps) {
 
   return (
     <div className="text-black flex items-center gap-2">
-     
       <button 
         onClick={() => {
           if (activeItemIndex !== 0) { 
@@ -45,9 +44,8 @@ export default function Carousel({ carouselData }: CarouselProps) {
         <HiArrowSmLeft />
       </button>
 
-        
       <Link 
-        href={currentItem.slug ? `/${currentItem.slug}` : '#'}
+        href={currentItem.slug ? `resource/${currentItem.slug}` : '#'}
         className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100 transition hover:opacity-95"
       >
         <div className="flex">
@@ -58,12 +56,21 @@ export default function Carousel({ carouselData }: CarouselProps) {
             <div className="text-4xl">{currentItem.title}</div>
             <div className="justify-left flex pt-2 ml-0 pl-0">
               <div className="w-12.5 h-12.5 rounded-full bg-white">
-                <Image 
-                  src={userProfile} 
-                  alt="Profile picture of the author"
-                  placeholder="blur"
-                  className="w-12 h-12 rounded-full"
-                />
+                {currentItem.pfpUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img 
+                    src={currentItem.pfpUrl} 
+                    alt={`Profile picture of ${currentItem.author}`}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                ) : (
+                  <Image 
+                    src={userProfile} 
+                    alt="Profile picture of the author"
+                    placeholder="blur"
+                    className="w-12 h-12 rounded-full"
+                  />
+                )}
               </div>
               <div className="pl-2">
                 <p>{currentItem.author}</p>
@@ -72,12 +79,18 @@ export default function Carousel({ carouselData }: CarouselProps) {
             </div>
           </div>
 
-          <div className="flex-1 max-w-[60%] bg-white m-3 rounded-lg overflow-hidden">
-            <Image src={blogImage} alt="blogImage" className="w-full h-full object-cover rounded-lg"/>
+          <div className="flex-1 max-w-[60%] bg-white m-3 rounded-lg overflow-hidden relative">
+            {currentItem.imageUrl ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img 
+                src={currentItem.imageUrl} 
+                alt={currentItem.title} 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            ) : null}
           </div>
         </div>
       </Link>
-
 
       <button 
         onClick={() => {

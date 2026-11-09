@@ -80,8 +80,8 @@ export default function Home() {
             <Link href="/plans" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               Plans
             </Link>
-            <Link href="/blog" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Blog
+            <Link href="/resource" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
+              Resources
             </Link>
             <Link href="/about" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               About us
@@ -127,7 +127,7 @@ export default function Home() {
                 Do more business with the government.
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed drop-shadow font-medium">
+              <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed drop-shadow font-semibold">
                 The all in one system to help you find and win government contracts.
               </p>
 
