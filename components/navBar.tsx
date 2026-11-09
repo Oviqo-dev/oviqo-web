@@ -45,7 +45,7 @@ export default function FloatingHeader() {
               : 'max-w-7xl px-6 py-4 text-gray-700'
           }`}
         >
-          <div className="flex-1 flex items-center justify-start">
+          <div className="flex-1 flex items-center justify-start mt-0.5">
             <Link href="/" className="font-bold text-lg text-gray-900 hover:text-black">
               OVIQO
             </Link>
