@@ -3,25 +3,15 @@
 import { useState, useEffect } from 'react';
 import type { FormEvent } from 'react';
 import Link from 'next/link';
+import FloatingHeader from "../../components/navBar";
 
 
 export default function Contact(){
 
-    const [scrolled, setScrolled] = useState(false);
-
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState('');
     
-      useEffect(() => {
-        const handleScroll = () => {
-          setScrolled(window.scrollY > 40);
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>)=> {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>)=> {
        e.preventDefault(); 
 
          setLoading(true);
@@ -64,101 +54,19 @@ export default function Contact(){
     }
 
     return(
-        <>
-        <style jsx global>{`
-        html {
-          scroll-behavior: smooth;
-        }
+      
+      <>
+      <FloatingHeader/>
 
-        .slide-link { 
-          position: relative;
-          text-decoration: none;
-          padding-bottom: 2px;
-          background-image: linear-gradient(currentColor, currentColor);
-          background-repeat: no-repeat;
-          background-size: 0% 2px;
-          background-position: 100% 100%;
-          transition: background-size 0.35s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        .slide-link:hover {
-          background-size: 100% 2px;
-          background-position: 0% 100%;
-        }
-
-        .radial-burst {
-          position: absolute;
-          width: 650px;
-          height: 650px;
-          border-radius: 9999px;
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
-          background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 75%);
-          -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
-          mask-image: radial-gradient(circle, black 30%, transparent 75%);
-          pointer-events: none;
-          z-index: 0;
-        }
-      `}</style>
-
-      {/* Floating Sticky Header Container */}
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
-        <header
-          className={`mx-auto transition-all duration-300 flex items-center justify-between ${
-            scrolled
-              ? 'max-w-5xl bg-white/80 backdrop-blur-md border border-gray-200/80 rounded-full px-6 py-3 shadow-lg text-gray-900'
-              : 'max-w-7xl px-6 py-4 text-gray-700'
-          }`}
-        >
-          <div className="flex-1 flex items-center justify-start">
-            <Link
-              href="/"
-              className={`transition font-bold text-lg ${
-                scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-900 hover:text-gray-600'
-              }`}
-            >
-              OVIQO
-            </Link>
-          </div>
-
-          <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium">
-            <Link href="/" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Solutions
-            </Link>
-            <Link href="/plans" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Plans
-            </Link>
-            <Link href="/resource" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Resources
-            </Link>
-            <Link href="/about" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              About us
-            </Link>
-          </nav>
-
-          <div className="flex-1 flex items-center justify-end">
-            <Link
-              href="/contact"
-              className={`px-5 py-2 text-sm font-semibold rounded-full shadow-sm transition border ${
-                scrolled
-                  ? 'bg-gray-900 text-white hover:bg-gray-800 border-transparent'
-                  : 'text-gray-900 bg-white/80 backdrop-blur-md border-gray-300 hover:bg-white'
-              }`}
-            >
-              Book a demo
-            </Link>
-          </div>
-        </header>
-      </div>
       <main className="mx-auto mt-5">
         <div className='flex flex-col gap-10 px-10 lg:flex-row lg:items-center lg:justify-center'>
           <div className=''>
 
-            <h2 className="flex items-center text-6xl font-bold text-black text-left gap-4"> Get in 
+            <h2 className="flex items-center text-3xl sm:text-4xl lg:text-6xl font-bold text-black text-left gap-4"> Get in 
                <span className="inline-block h-1 w-25 bg-black"> </span> </h2>
-            <h2 className="text-7xl font-bold text-black text-left"> touch with us  </h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black text-left"> touch with us  </h2>
             
-            <p className=' text-slate-500 mt-5 text-1xl'>We’re here to help! Whether you have a question about our 
+            <p className=' text-slate-500 mt-5 text-base'>We’re here to help! Whether you have a question about our 
               services or an enquiry about Oviqo, we’d love to hear from you.</p>
               <p className=' text-slate-500 mt-5'>Company Enquiry Email : </p>
               <p className=' text-black mt-5'>oviqo@hotmail.com</p>
@@ -169,7 +77,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-190 h-145.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
+          <div className='w-full max-w-xl rounded-[40px] bg-neutral-100 p-7 sm:p-8 lg:p-10 mt-16 ml-50'>
              <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
