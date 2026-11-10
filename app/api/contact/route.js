@@ -24,7 +24,7 @@ export async function POST(request) {
         to: 'oviqo@hotmail.com',
         replyTo: email,
         subject:  `OVIQO enquiry from ${name}`,
-        text: `You have received a new enquiry from your OVIQO website.
+        text: `You have received a new enquiry .
         
         Name: ${name}
         Email: ${email} 
@@ -35,6 +35,7 @@ export async function POST(request) {
 
         -------------------------
         Sent via the OVIQO Website`,
+
         });
         if(error){
             console.error(error);
@@ -45,7 +46,6 @@ export async function POST(request) {
         );
         }
         return NextResponse.json({success: true,});
-        return NextResponse.json({message: "Email sent Successfully", id: data.data?.id});
 
     }catch(err)
     {
