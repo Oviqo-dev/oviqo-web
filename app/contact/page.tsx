@@ -128,8 +128,8 @@ export default function Contact(){
             <Link href="/plans" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               Plans
             </Link>
-            <Link href="/blog" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Blog
+            <Link href="/resource" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
+              Resources
             </Link>
             <Link href="/about" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               About us

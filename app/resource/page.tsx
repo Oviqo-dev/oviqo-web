@@ -20,17 +20,16 @@ const POSTS_QUERY = `*[
   && defined(slug.current)
   && (!defined($type) || type == $type)
 ]|order(publishedAt desc)[$start...$end]{
-  _id, 
-  type, 
-  author, 
-  authortitle, 
-  title, 
-  slug, 
+  _id,
+  type,
+  title,
+  slug,
   image,
   publishedAt,
-  excerpt,
-  pfpimage,
-
+  "bodyText": pt::text(body),
+  "author": author->name,
+  "authorTitle": author->title,
+  "authorImage": author->image
 }`;
 
 const POSTS_COUNT_QUERY = `count(*[
@@ -84,12 +83,10 @@ async function BlogContent({
     title: post.title,
     type: post.type || 'Article',
     author: post.author || 'Oviqo Team',
-    authorTitle: post.authortitle || 'Co-Founder, Oviqo',
+    authorTitle: post.authorTitle || 'Co-Founder, Oviqo',
     slug: post.slug.current,
     imageUrl: post.image ? urlFor(post.image)?.url() : null,
-    pfpUrl: post.pfpimage ? urlFor(post.pfpimage)?.width(100).height(100).url() : null,
-
-    
+    pfpUrl: post.authorImage ? urlFor(post.authorImage)?.width(100).height(100).url() : null,
   }));
 
   const finalCarouselData = carouselData.length > 0 ? carouselData : [
@@ -146,7 +143,7 @@ async function BlogContent({
             return (
               <Link 
                 key={post._id} 
-                href={`resource/${post.slug.current}`}
+                href={`/resource/${post.slug.current}`}
                 className="bg-white rounded-lg transition flex flex-col h-65"
               >
                 <div className="w-full h-40 bg-gray-100 relative rounded-lg overflow-hidden">
@@ -177,8 +174,10 @@ async function BlogContent({
                     <h2 className="text-lg font-bold text-black mt-0 line-clamp-1">
                       {post.title}
                     </h2>
-                    <p className="text-gray-600">
-                      {post.excerpt || 'Error loading preview, click to read.'}
+                    <p className="text-gray-600 line-clamp-2">
+                      {post.bodyText
+                        ? `${post.bodyText.slice(0, 150)}...`
+                        : 'Error loading preview, click to read.'}
                     </p>
                   </div>
                 </div>

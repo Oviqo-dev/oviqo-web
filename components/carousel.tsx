@@ -45,7 +45,7 @@ export default function Carousel({ carouselData }: CarouselProps) {
       </button>
 
       <Link 
-        href={currentItem.slug ? `resource/${currentItem.slug}` : '#'}
+        href={currentItem.slug ? `/resource/${currentItem.slug}` : '#'}
         className="w-full max-w-full grid bg-[#EBEAFB] rounded-md h-100 transition hover:opacity-95"
       >
         <div className="flex">
