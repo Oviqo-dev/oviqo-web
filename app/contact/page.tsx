@@ -77,7 +77,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-full max-w-xl rounded-[40px] bg-neutral-100 p-7 sm:p-8 lg:p-10 mt-16 ml-50'>
+          <div className='w-full max-w-xl min-w-0 rounded-[40px] bg-neutral-100 p-7 sm:p-8 lg:p-10 mt-16 ml-50'>
              <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
