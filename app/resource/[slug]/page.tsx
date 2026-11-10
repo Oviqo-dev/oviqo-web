@@ -3,6 +3,7 @@ import { PortableText, type SanityDocument } from "next-sanity";
 import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import { client } from "@/sanity/client";
 import Link from "next/link";
+import FloatingHeader from "../../../components/navBar"
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
@@ -36,7 +37,7 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
   if (!post) {
     return (
       <div className="flex flex-col gap-4">
-        <Link href="/blog" className="hover:underline">
+        <Link href="/resource" className="hover:underline">
           ← Back to posts
         </Link>
         <h1 className="text-2xl font-bold mt-4">Post not found</h1>
@@ -50,7 +51,8 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
 
   return (
     <>
-      <Link href="/" className="hover:underline">
+      <FloatingHeader />
+      <Link href="/resource" className="hover:underline">
         ← Back to posts
       </Link>
       {postImageUrl && (
@@ -76,7 +78,7 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
 
 export default function PostPage(props: { params: Promise<{ slug: string }> }) {
   return (
-    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4 text-black">
+    <main className="container mx-auto min-h-screen max-w-7xl  flex flex-col gap-4 text-black">
       <Suspense fallback={<div className="animate-pulse">Loading post...</div>}>
         <PostContent params={props.params} />
       </Suspense>

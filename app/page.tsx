@@ -80,8 +80,8 @@ export default function Home() {
             <Link href="/plans" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               Plans
             </Link>
-            <Link href="/blog" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
-              Blog
+            <Link href="/resource" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
+              Resources
             </Link>
             <Link href="/about" className="slide-link transition-colors text-gray-700 hover:text-gray-900">
               About us
@@ -127,17 +127,17 @@ export default function Home() {
                 Do more business with the government.
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed drop-shadow font-medium">
+              <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/90 leading-relaxed drop-shadow font-semibold">
                 The all in one system to help you find and win government contracts.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                <a
+                <Link
                   href="/contact"
                   className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-[#9d96e9] text-white font-medium hover:bg-[#8b84dd] shadow-lg transition"
                 >
                   Book a demo
-                </a>
+                </Link>
                 <Link
                   href="/contact"
                   className="w-full sm:w-56 inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/80 backdrop-blur-md border border-gray-300 text-gray-900 font-medium hover:bg-white shadow-sm transition"

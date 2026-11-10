@@ -37,7 +37,7 @@ export default function FloatingHeader() {
         }
       `}</style>
 
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300">
+      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300 pl-0 pr-0">
         <header
           className={`mx-auto transition-all duration-300 flex items-center justify-between ${
             scrolled
@@ -45,7 +45,7 @@ export default function FloatingHeader() {
               : 'max-w-7xl px-6 py-4 text-gray-700'
           }`}
         >
-          <div className="flex-1 flex items-center justify-start">
+          <div className="flex-1 flex items-center justify-start mt-0.5">
             <Link href="/" className="font-bold text-lg text-gray-900 hover:text-black">
               OVIQO
             </Link>
@@ -54,7 +54,7 @@ export default function FloatingHeader() {
           <nav className="hidden lg:flex items-center space-x-8 text-sm font-medium">
             <Link href="/" className="slide-link text-gray-700 hover:text-gray-900">Solutions</Link>
             <Link href="/plans" className="slide-link text-gray-700 hover:text-gray-900">Plans</Link>
-            <Link href="/blog" className="slide-link text-gray-700 hover:text-gray-900">Blog</Link>
+            <Link href="/resource" className="slide-link text-gray-700 hover:text-gray-900">Resources</Link>
             <Link href="/about" className="slide-link text-gray-700 hover:text-gray-900">About us</Link>
           </nav>
 
