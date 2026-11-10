@@ -55,16 +55,16 @@ export default function Contact(){
 
     return(
         <>
-        <FloatingHeader />
-      <main className="mx-auto mt-5">
-        <div className='flex flex-col gap-10 px-10 lg:flex-row lg:items-center lg:justify-center'>
+        <FloatingHeader />3
+      <main className="mx-auto mt-5 w-full max-w-[1200px]">
+        <div className="flex flex-col gap-10 px-4  sm:px-6 lg:flex-row lg:items-center lg:justify-center">
           <div className=''>
 
-            <h2 className="flex items-center text-6xl font-bold text-black text-left gap-4"> Get in 
+            <h2 className="flex items-center text-3xl sm:text-4xl lg:text-6xl font-bold text-black text-left gap-4"> Get in 
                <span className="inline-block h-1 w-25 bg-black"> </span> </h2>
-            <h2 className="text-7xl font-bold text-black text-left"> touch with us  </h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black text-left"> touch with us  </h2>
             
-            <p className=' text-slate-500 mt-5 text-1xl'>We’re here to help! Whether you have a question about our 
+            <p className=' text-slate-500 mt-5 text-base'>We’re here to help! Whether you have a question about our 
               services or an enquiry about Oviqo, we’d love to hear from you.</p>
               <p className=' text-slate-500 mt-5'>Company Enquiry Email : </p>
               <p className=' text-black mt-5'>oviqo@hotmail.com</p>
@@ -75,7 +75,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-190 h-145.5 rounded-[40px] bg-neutral-100 p-10 mt-16 ml-50'>
+          <div className='w-full max-w-xl rounded-[40px] bg-neutral-100 p-7 sm:p-8 lg:p-10 mt-16 ml-50'>
              <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
