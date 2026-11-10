@@ -107,6 +107,7 @@ async function BlogContent({
   ];
 
   return (
+    <>
     <main className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 mt-0 pl-7 pr-7">
       <section>
         <h1 className="text-3xl font-bold text-slate-900 pt-0 py-6 text-left">
@@ -176,7 +177,7 @@ async function BlogContent({
                     </h2>
                     <p className="text-gray-600 line-clamp-2">
                       {post.bodyText
-                        ? `${post.bodyText.slice(0, 150)}...`
+                        ? `${post.bodyText.slice(0, 50)}...`
                         : 'Error loading preview, click to read.'}
                     </p>
                   </div>
@@ -220,6 +221,8 @@ async function BlogContent({
 
       </section>
     </main>
+          
+    </>
   );
 }
 

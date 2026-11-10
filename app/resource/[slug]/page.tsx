@@ -5,6 +5,7 @@ import { client } from "@/sanity/client";
 import Link from "next/link";
 import FloatingHeader from "../../../components/navBar"
 import userProfile from '../../../public/memoji.png';
+
 import Image from 'next/image';
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
@@ -41,12 +42,19 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
 
   if (!post) {
     return (
+      <>
       <div className="flex flex-col gap-4 p-6">
         <Link href="/resource" className="hover:underline">
           Back to posts
         </Link>
         <h1 className="text-2xl font-bold mt-4">Post not found</h1>
       </div>
+
+      <footer className="py-6 text-center text-xs text-gray-900 bg-white">
+            <p>© 2026 OVIQO. All rights reserved.</p>
+            <p>Developed by Adl &amp; Ahad</p>
+        </footer>
+      </>
     );
   }
 
@@ -65,9 +73,15 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
     : null;
 
   return (
+    <>
+    <div>
+      <div  className="w-full ">
+       
     <div className="w-full bg-[#F7F7FF]">
-      <div className="max-w-7xl mx-auto">
+       
         <FloatingHeader />
+      <div className="max-w-7xl mx-auto">
+        
         <section className="w-full">
           <div className="flex w-full justify-between items-start gap-8 pl-6 pr-6 pb-10">
             
@@ -130,20 +144,50 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
 
           </div>
         </section>
+        </div>
+        </div>   
 
-        <section>
-            <div className="flex-3">
-              <div className="max-w-[30%]"></div>
+        <section  className="max-w-7xl mx-auto pl-6 pr-6 ">
 
-              <div className="max-w-[70%]"></div>
+
+            <div className="flex gap-12 mt-10">
+              <div className="flex-1 max-w-[35%]">
+
+                <div>
+
+                </div>
+
+                <div className="rounded-lg w-full h-75 bg-[#F7F7FF] p-10 justify-center mx-auto items-center">
+                  <div>
+                  <h1 className="font-semibold">Subscribe to the newsletter</h1>
+                  <p>Government tender news delivered straight to your inbox</p>
+                  <form className="rounded-lg w-full h-10 mt-5 bg-white text-gray-500 items-center flex justify-center mx-auto text-left">Enter your email</form>
+                  <button className="rounded-lg w-full h-10 mt-5 bg-black text-white">Subscribe</button>
+                  <p className="text-center mt-3 text-gray-500">No spam, we hate it too!</p>
+                  </div>
+                </div>
+                
+
+              </div>
+
+              <div className="flex-1 max-w-[60%]">
+                <div className="prose text-gray-800 justify-end items-end">
+                  {Array.isArray(post.body) && <PortableText value={post.body} />}
+                </div>
+              </div>
 
             </div>
 
 
         </section>
-
+             
       </div>
     </div>
+    <footer className="py-6 text-center text-xs text-gray-900 bg-white">
+            <p>© 2026 OVIQO. All rights reserved.</p>
+            <p>Developed by Adl &amp; Ahad</p>
+        </footer>
+    </>
   );
 }
 
