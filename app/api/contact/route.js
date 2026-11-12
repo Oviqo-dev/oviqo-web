@@ -20,7 +20,7 @@ export async function POST(request) {
         }
   
         const  { data,error}  = await resend.emails.send({
-        from: 'Oviqo Team <info@send.oviqo.co.uk>',
+        from: 'Oviqo Service <info@send.oviqo.co.uk>',
         to: 'oviqo@hotmail.com',
         replyTo: email,
         subject:  `OVIQO enquiry from ${name}`,

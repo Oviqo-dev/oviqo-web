@@ -58,8 +58,8 @@ export default function Contact(){
       <>
       <FloatingHeader/>
 
-      <main className="mx-auto mt-5">
-        <div className='flex flex-col gap-10 px-10 lg:flex-row lg:items-center lg:justify-center'>
+      <main className="min-h-[calc(100svh-90px)] flex flex-col">
+        <div className='flex-1 flex-col gap-8 px-6 py-6 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:px-12'>
           <div className=''>
 
             <h2 className="flex items-center text-3xl sm:text-4xl lg:text-6xl font-bold text-black text-left gap-4"> Get in 
@@ -77,7 +77,7 @@ export default function Contact(){
 
 
             </div>          
-          <div className='w-full max-w-xl min-w-0 rounded-[40px] bg-neutral-100 p-7 sm:p-8 lg:p-10 mt-16 ml-50'>
+          <div className='w-full max-w-xl min-w-0 rounded-[40px] bg-neutral-100 p-8 sm:p-8 lg:p-9 mt-10'>
              <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
@@ -114,7 +114,7 @@ export default function Contact(){
             <textarea
               id="message"
               name="message"
-              rows={8}
+              rows={5}
               required
               className="w-full rounded-lg border border-slate-600 text-slate-600 p-3 resize-none"
             />
@@ -140,7 +140,7 @@ export default function Contact(){
           </div>
         </div>
       </main>
-        <footer className="mt-10 py-6 text-center text-xs text-gray-900 bg-white">
+        <footer className="py-4 text-center text-xs text-gray-900 bg-white">
             <p>© 2026 OVIQO. All rights reserved.</p>
             <p>Developed by Adl &amp; Ahad.</p>
         </footer>
