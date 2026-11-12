@@ -41,7 +41,7 @@ export function getPortableTextComponents(
       h1: ({ children, value }) => (
         <h2
           id={idFor(value._key)}
-          className="scroll-mt-28 mt-12 mb-4 text-4xl font-bold text-black"
+          className="scroll-mt-28 mt-0 mb-4 text-4xl font-bold text-black"
         >
           {children}
         </h2>

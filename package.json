@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
     "@sanity/image-url": "^2.1.1",
     "@syncfusion/ej2-react-inputs": "^35.1.43",
     "@tailwindcss/typography": "^0.5.20",

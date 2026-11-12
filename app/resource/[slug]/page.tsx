@@ -189,8 +189,8 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
                 </div>
               </aside>
 
-              {/* Right column: article body */}
-              <article className="flex-1 max-w-[60%] text-lg">
+             
+              <article className="flex-1 max-w-[60%] pt-0 mt-0 text-lg">
                 {Array.isArray(post.body) && (
                   <PortableText
                     value={post.body}
