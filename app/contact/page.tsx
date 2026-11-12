@@ -58,9 +58,9 @@ export default function Contact(){
       <>
       <FloatingHeader/>
 
-      <main className="min-h-[calc(100svh-90px)] flex flex-col">
-        <div className='flex-1 flex-col gap-8 px-6 py-6 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:px-12'>
-          <div className=''>
+      <main className="flex flex-col lg:flex-row mx-auto sm:flex-col gap-10 mt-10 sm:px-8 max-w-7xl px-8">
+    
+          <div className='flex flex-col w-full lg:w-[50%] sm:px-10 mt-9'>
 
             <h2 className="flex items-center text-3xl sm:text-4xl lg:text-6xl font-bold text-black text-left gap-4"> Get in 
                <span className="inline-block h-1 w-25 bg-black"> </span> </h2>
@@ -73,11 +73,11 @@ export default function Contact(){
                <p className=' text-slate-500 mt-5'>Phone Number : </p>
                <p className=' text-black mt-5'>+44 7597474602</p>
 
-               <p className="mt-12 rounded-[80] bg-black px-5 py-3 font-semibold text-white text-center hover:bg-black">Avaiable Monday to Friday 9AM - 5PM GMT</p>
+               <p className="mt-12 rounded-[80] bg-black px-5 py-3 font-semibold text-white text-center hover:bg-black mt-16">Avaiable Monday to Friday 9AM - 5PM GMT</p>
 
 
             </div>          
-          <div className='w-full max-w-xl min-w-0 rounded-[40px] bg-neutral-100 p-8 sm:p-8 lg:p-9 mt-10'>
+          <div className='rounded-[40px] bg-neutral-100 p-8 sm:p-8 lg:p-9 mt-10 lg:w-[50%]'>
              <form onSubmit={handleSubmit}>
                 <div className=''>
             <label htmlFor="name" className="mb-2 mt-2 block text-black font-semibold">
@@ -114,7 +114,7 @@ export default function Contact(){
             <textarea
               id="message"
               name="message"
-              rows={5}
+              rows={6}
               required
               className="w-full rounded-lg border border-slate-600 text-slate-600 p-3 resize-none"
             />
@@ -138,9 +138,8 @@ export default function Contact(){
 
              </form>
           </div>
-        </div>
       </main>
-        <footer className="py-4 text-center text-xs text-gray-900 bg-white">
+        <footer className="py-4 text-center text-xs text-gray-900 bg-white mt-10">
             <p>© 2026 OVIQO. All rights reserved.</p>
             <p>Developed by Adl &amp; Ahad.</p>
         </footer>
