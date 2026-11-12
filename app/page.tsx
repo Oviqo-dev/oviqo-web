@@ -4,11 +4,24 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FloatingHeader from "../components/navBar";
 
+
 export default function Home() {
  
   return (
     <>
-   <FloatingHeader/>
+     <FloatingHeader/>
+      <div className="-mt-22 min-h-screen flex flex-col justify-between text-[#0F172A]">
+        <div
+          className="min-h-screen flex flex-col justify-between"
+          style={{
+            backgroundImage: `url('/background_image.jpg')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="h-20" />
+
           <main className="relative flex-1 flex flex-col items-center justify-center px-4 sm:px-6 text-center max-w-4xl mx-auto my-auto w-full">
             <div className="radial-burst" />
 
@@ -43,7 +56,7 @@ export default function Home() {
           </main>
 
           <div className="h-12" />
-        
+        </div>
 
         <section className="bg-white py-24 px-6 scroll-mt-24" id="solution">
           <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -57,6 +70,7 @@ export default function Home() {
             <p>© 2026 OVIQO. All rights reserved.</p>
             <p>Developed by Adl &amp; Ahad</p>
         </footer>
+      </div>
     </>
   );
 }
