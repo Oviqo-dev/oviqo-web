@@ -147,7 +147,7 @@ export default function Plans() {
           </div>
 
           <h1 className='text-center text-black mt-5 text-3xl font-semibold mb-3'>Compare features</h1>
-          <div className='flex p-2 pl-6 pr-7 max-w-7xl'>
+          <div className='flex p-2 pl-6 pr-6 max-w-7xl'>
 
             <div className="w-full overflow-x-auto rounded-lg ">
               <table className="w-full min-w-max table-auto text-left">
