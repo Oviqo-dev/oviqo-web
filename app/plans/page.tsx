@@ -146,7 +146,7 @@ export default function Plans() {
             </div>
           </div>
 
-          <h1 className='text-center text-black mt-5 text-3xl font-semibold'>Compare features</h1>
+          <h1 className='text-center text-black mt-5 text-3xl font-semibold mb-5'>Compare features</h1>
           <div className='flex p-2 pl-6 pr-6 max-w-7xl'>
 
             <div className="w-full overflow-x-auto rounded-lg ">
