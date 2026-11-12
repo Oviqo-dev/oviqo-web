@@ -12,7 +12,7 @@ export default function About(){
        <main className="mx-auto mt-5">
               <h1 className="text-4xl font-bold text-slate-900 text-center"> About us </h1>
 
-            <div className="flex lg:flex-row gap-5 sm:flex-col">
+            <div className="flex-col lg:flex-row gap-5 sm:flex-col">
 
                  <div className="relative text-black w-60 h-80  border border-gray-300 rounded-lg mt-10 overflow-hidden shadow-xl ">
                        <img  src="/1.png" alt="Profile" className="w-full h-full object-cover"/>
