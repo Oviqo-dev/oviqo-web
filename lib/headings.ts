@@ -37,7 +37,6 @@ export function extractHeadings(body: unknown): {
     const text = (block.children ?? []).map((c) => c.text ?? "").join("").trim();
     if (!text) continue;
 
-    // De-duplicate repeated heading text: "intro", "intro-2", ...
     const base = slugify(text) || "section";
     const count = used.get(base) ?? 0;
     used.set(base, count + 1);
