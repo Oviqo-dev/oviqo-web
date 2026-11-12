@@ -35,8 +35,8 @@ export default function About(){
                   <div className="relative text-black w-60 h-80  border border-gray-300 rounded-lg mt-10 overflow-hidden shadow-xl ">
                        <img  src="/3.png" alt="Profile" className="w-full h-full object-cover"/>
 
-                         <div className="absolute bottom-0 left-0 w-full p-3">
-                        <h2 className="text-white text-xl font-bold"> Saif Pedo</h2>
+                         <div className="absolute bottom-0 left-0 w-full p-2">
+                        <h2 className="text-white text-xl font-bold"> Saif Mirza</h2>
                          <h2 className="text-white text-xl font-bold"> Ceo</h2>
                         </div>
                  </div>
