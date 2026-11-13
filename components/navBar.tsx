@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export default function FloatingHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,12 +60,53 @@ export default function FloatingHeader() {
           </nav>
 
           <div className="flex-1 flex items-center justify-end">
+            <button
+  type="button"
+  onClick={() => setMenuOpen(!menuOpen)}
+  aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+  aria-expanded={menuOpen}
+  aria-controls="mobile-navigation"
+  className="lg:hidden p-2 text-gray-900"
+>
+  {menuOpen ? '✕' : '☰'}
+</button>
             <Link
               href="/contact"
-              className="px-5 py-2 text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]"
+              className="hidden lg:inline-flex px-5 py-2 text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]"
             >
               Book a demo
             </Link>
+
+            {menuOpen && (
+  <nav
+    id="mobile-navigation"
+    className="lg:hidden mx-auto mt-2 max-w-5xl bg-white rounded-2xl shadow-lg border border-gray-200 p-5 flex flex-col gap-4"
+  >
+    <Link href="/" onClick={() => setMenuOpen(false)}>
+      Solutions
+    </Link>
+
+    <Link href="/plans" onClick={() => setMenuOpen(false)}>
+      Plans
+    </Link>
+
+    <Link href="/resource" onClick={() => setMenuOpen(false)}>
+      Resources
+    </Link>
+
+    <Link href="/about" onClick={() => setMenuOpen(false)}>
+      About us
+    </Link>
+
+    <Link
+      href="/contact"
+      onClick={() => setMenuOpen(false)}
+      className="bg-[#9d96e9] text-white text-center rounded-full px-5 py-3"
+    >
+      Book a demo
+    </Link>
+  </nav>
+)}
           </div>
         </header>
       </div>
