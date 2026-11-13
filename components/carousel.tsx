@@ -72,7 +72,7 @@ export default function Carousel({ carouselData }: CarouselProps) {
         <div className="flex h-full flex-col sm:flex-row">
         
           <div
-            className={`relative order-first m-3 aspect-video overflow-hidden rounded-lg mb-0 pb-0 bg-white sm:order-last sm:aspect-auto sm:w-3/5 ${
+            className={`relative order-first m-3 aspect-video overflow-hidden rounded-lg bg-white sm:order-last sm:aspect-auto sm:w-3/5 ${
               currentItem.imageUrl ? '' : 'hidden sm:block'
             }`}
           >
