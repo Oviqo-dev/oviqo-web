@@ -81,7 +81,7 @@ export default function Carousel({ carouselData }: CarouselProps) {
               <img
                 src={currentItem.imageUrl}
                 alt={currentItem.title}
-                className="h-full w-full rounded-lg object-cover"
+                className="absolute inset-0 h-full w-full rounded-lg object-cover"
               />
             ) : null}
           </div>
