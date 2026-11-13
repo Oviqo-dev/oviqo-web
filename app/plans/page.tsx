@@ -48,7 +48,7 @@ export default function Plans() {
             </div> 
 
 
-            <div className="flex p-2 pt-0 h-auto  min-h-120">
+            <div className="md:flex-row md:flex p-2 pt-0 h-auto min-h-120 sm:flex-col">
               <div className="flex-1 flex flex-col bg-[#f6f6f6] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">
                 Included in all tiers
                 <p className="text-sm mt-42 text-[#9d96e9]">Features</p>
