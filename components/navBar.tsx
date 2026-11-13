@@ -88,7 +88,7 @@ export default function FloatingHeader() {
                  <Link href="/plans">Plans</Link>
                  <Link href="/resource">Resources</Link>
                  <Link href="/about">About us</Link>
-                 <Link href="/contact" className="mt-3 w-fit px-5 py-2 lg:text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]">Book a demo</Link>
+                 <Link href="/contact" className="mt-2 w-fit px-5 py-2 lg:text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]">Book a demo</Link>
 
               </nav>
              )}
