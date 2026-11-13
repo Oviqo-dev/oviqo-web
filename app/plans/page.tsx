@@ -48,7 +48,7 @@ export default function Plans() {
             </div> 
 
 
-            <div className="flex p-2 pt-0 h-auto  min-h-120">
+            <div className="md:flex-row md:flex p-2 pt-0 h-auto min-h-120 sm:flex-col">
               <div className="flex-1 flex flex-col bg-[#f6f6f6] m-2 rounded-lg text-left h-auto p-4 text-3xl font-semibold">
                 Included in all tiers
                 <p className="text-sm mt-42 text-[#9d96e9]">Features</p>
@@ -150,13 +150,18 @@ export default function Plans() {
           <div className='flex p-2 pl-6 pr-6 max-w-7xl'>
 
             <div className="w-full overflow-x-auto rounded-lg ">
-              <table className="w-full min-w-max table-auto text-left">
+              <table className="w-full table-auto text-left min-w-130">
                 <thead>
                   <tr>
                     {TABLE_HEAD.map((head, i) => (
                       <th
                         key={head}
-                        className={`p-4 border-b border-gray-200 bg-[#f6f6f6] text-sm font-bold text-gray-900 ${i > 0 ? "text-center" : ""}`}
+                        scope="col"
+                        className={`border-b border-gray-200 bg-[#f6f6f6] p-3 text-xs font-bold text-gray-900 sm:p-4 sm:text-sm ${
+                          i === 0
+                            ? "sticky left-0 z-20 shadow-[2px_0_0_0_#e5e7eb]"
+                            : "text-center"
+                        }`}
                       >
                         {head}
                       </th>
@@ -164,15 +169,22 @@ export default function Plans() {
                   </tr>
                 </thead>
                 <tbody>
-                  {TABLE_ROWS.map(({ feature, growth, scale, enterprise }, index) => (
-                    <tr key={feature} className={index % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}>
-                      <td className="p-4 text-sm font-medium text-gray-900">{feature}</td>
-                      <td className="p-4 text-center"><Cell value={growth} /></td>
-                      <td className="p-4 text-center"><Cell value={scale} /></td>
-                      <td className="p-4 text-center"><Cell value={enterprise} /></td>
+                {TABLE_ROWS.map(({ feature, growth, scale, enterprise }, index) => {
+                  const bg = index % 2 === 0 ? "bg-white" : "bg-[#fafafa]";
+                  return (
+                    <tr key={feature} className={bg}>
+                      <td
+                        className={`sticky left-0 z-10 p-3 text-xs font-medium text-gray-900 shadow-[2px_0_0_0_#e5e7eb] sm:p-4 sm:text-sm ${bg}`}
+                      >
+                        {feature}
+                      </td>
+                      <td className="p-3 text-center sm:p-4"><Cell value={growth} /></td>
+                      <td className="p-3 text-center sm:p-4"><Cell value={scale} /></td>
+                      <td className="p-3 text-center sm:p-4"><Cell value={enterprise} /></td>
                     </tr>
-                  ))}
-                </tbody>
+                  );
+                })}
+              </tbody>
               </table>
             </div>
             
@@ -182,10 +194,10 @@ export default function Plans() {
         </section>
         
 
-      </main>
-          <footer className="py-6 text-center text-xs text-gray-900 bg-white">
-            <p>© 2026 OVIQO. All rights reserved.</p>
-            <p>Developed by Adl &amp; Ahad.</p>
+        </main>
+        <footer className="py-6 text-center text-xs text-gray-900 bg-white">
+          <p>© 2026 OVIQO. All rights reserved.</p>
+          <p>Developed by Adl &amp; Ahad.</p>
         </footer>
         
       
