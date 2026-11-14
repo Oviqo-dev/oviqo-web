@@ -8,6 +8,7 @@ import TableOfContents from "../../../components/tableOfContents";
 import { getPortableTextComponents } from "../../../components/portableTextComponents";
 import { extractHeadings } from "../../../lib/headings";
 import userProfile from "../../../public/memoji.png";
+import Footer from "../../../components/Footer"
 
 import Image from "next/image";
 
@@ -203,10 +204,7 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
         </div>
       </div>
 
-      <footer className="py-6 text-center text-xs text-gray-900 bg-white">
-        <p>© 2026 OVIQO. All rights reserved.</p>
-        <p>Developed by Adl &amp; Ahad</p>
-      </footer>
+      <Footer/>
     </>
   );
 }

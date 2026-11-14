@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FloatingHeader from "../../components/navBar";
+import Footer from "../../components/Footer";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
 
 const TABLE_HEAD = ["Features", "Growth", "Scale", "Enterprise"];
@@ -195,13 +196,8 @@ export default function Plans() {
         
 
         </main>
-        <footer className="py-6 text-center text-xs text-gray-900 bg-white">
-          <p>© 2026 OVIQO. All rights reserved.</p>
-          <p>Developed by Adl &amp; Ahad.</p>
-        </footer>
+        <Footer/>
         
-      
-    
     </>
   );
 }
