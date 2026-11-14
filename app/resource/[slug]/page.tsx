@@ -77,7 +77,6 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
     );
   }
 
-  // Table of contents data + heading IDs used by the body renderer
   const { headings, idByKey } = extractHeadings(post.body);
 
   const postImageUrl = post.image
@@ -88,20 +87,29 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
     <>
       <div>
         <div className="w-full">
-          {/* Hero */}
           <div className="w-full bg-[#F7F7FF]">
             <FloatingHeader />
             <div className="max-w-7xl mx-auto">
               <section className="w-full">
-                <div className="flex w-full justify-between items-start gap-8 pl-6 pr-6 pb-10">
-                  {/* Left Column (Title + Author) */}
-                  <div className="w-3/5">
+                <div className="w-full justify-between items-start gap-8 pl-6 pr-6 pb-10 sm:flex-col sm:flex md:flex md:flex-row">
+                  <div className="md:w-3/5 sm:w-full">
                     <Link
                       href="/resource"
                       className="hover:underline text-gray-600 underline"
                     >
                       Back to posts
                     </Link>
+
+                    <div className="md:hidden sm:w-full sm:justify-end">
+                      {postImageUrl && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={postImageUrl}
+                          alt={post.title}
+                          className="aspect-video rounded-xl object-cover w-full"
+                        />
+                      )}
+                    </div>
 
                     <div className="prose mt-4 text-gray-600">
                       {post.publishedAt &&
@@ -149,8 +157,7 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
                     </div>
                   </div>
 
-                  {/* Right Column (Featured Image) */}
-                  <div className="w-2/5 flex justify-end">
+                  <div className="md:w-2/5 md:block pt-10 hidden justify-end">
                     {postImageUrl && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
@@ -165,15 +172,13 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
             </div>
           </div>
 
-          {/* Article */}
           <section className="max-w-7xl mx-auto pl-6 pr-6 pb-16">
-            <div className="flex gap-12 mt-10">
-              {/* Left column: sticky TOC + newsletter */}
+            <div className="flex md:gap-12 mt-10">
               <aside className="flex-1 max-w-[35%]">
-                <div className="sticky top-24 flex flex-col gap-6">
+                <div className="sticky top-24 flex-col gap-6 hidden md:block">
                   <TableOfContents headings={headings} />
 
-                  <div className="rounded-lg w-full bg-[#F7F7FF] p-10">
+                  <div className="rounded-lg w-full bg-[#F7F7FF] p-10 sm:hidden md:block">
                     <h2 className="font-semibold">Subscribe to the newsletter</h2>
                     <p>Government tender news delivered straight to your inbox</p>
                     <form className="rounded-lg w-full h-10 mt-5 bg-white text-gray-500 items-center flex justify-center mx-auto text-left">
@@ -190,7 +195,7 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
               </aside>
 
              
-              <article className="flex-1 max-w-[60%] pt-0 mt-0 text-lg">
+              <article className="md:flex-1 sm:w-full md:max-w-[60%] md:pt-0 md:mt-0 sm:mx-auto text-lg">
                 {Array.isArray(post.body) && (
                   <PortableText
                     value={post.body}
