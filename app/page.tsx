@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import FloatingHeader from "../components/navBar";
+import Footer from "../components/Footer";
 
 
 export default function Home() {
@@ -66,10 +67,8 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="py-6 text-center text-xs text-gray-900 bg-white">
-            <p>© 2026 OVIQO. All rights reserved.</p>
-            <p>Developed by Adl &amp; Ahad</p>
-        </footer>
+        <Footer/>
+        
       </div>
     </>
   );

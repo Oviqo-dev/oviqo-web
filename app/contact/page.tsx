@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import type { FormEvent } from 'react';
 import Link from 'next/link';
 import FloatingHeader from "../../components/navBar";
+import Footer from "../../components/Footer";
 
 
 export default function Contact(){
@@ -138,11 +139,12 @@ export default function Contact(){
 
              </form>
           </div>
+           
       </main>
-        <footer className="py-4 text-center text-xs text-gray-900 bg-white mt-10">
-            <p>© 2026 OVIQO. All rights reserved.</p>
-            <p>Developed by Adl &amp; Ahad.</p>
-        </footer>
+      <Footer/>
+      
+
+  
     </>
   );
 }
