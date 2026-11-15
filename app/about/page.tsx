@@ -1,8 +1,6 @@
 'use client';
 
-import Footer from "../../components/Footer";
 import FloatingHeader from "../../components/navBar";
-import Image from "next/image";
 export default function About(){
 
    
