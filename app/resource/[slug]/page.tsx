@@ -8,7 +8,7 @@ import TableOfContents from "../../../components/tableOfContents";
 import { getPortableTextComponents } from "../../../components/portableTextComponents";
 import { extractHeadings } from "../../../lib/headings";
 import userProfile from "../../../public/memoji.png";
-import Footer from "../../../components/Footer"
+import Footer from "../../../components/footer"
 
 import Image from "next/image";
 

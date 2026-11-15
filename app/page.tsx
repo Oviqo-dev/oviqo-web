@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
 import FloatingHeader from "../components/navBar";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 
 
 export default function Home() {
