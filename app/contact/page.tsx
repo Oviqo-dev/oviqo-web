@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { FormEvent } from 'react';
-import Link from 'next/link';
 import FloatingHeader from "../../components/navBar";
-import Footer from "../../components/Footer";
-
+import Footer from "../../components/footer";
+{/*ff */}
 
 export default function Contact(){
 
