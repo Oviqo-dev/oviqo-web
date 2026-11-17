@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FloatingHeader from "../../components/navBar";
-import Footer from "../../components/footer";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
 
 const TABLE_HEAD = ["Features", "Growth", "Scale", "Enterprise"];
@@ -196,7 +195,6 @@ export default function Plans() {
         
 
         </main>
-        <Footer/>
         
     </>
   );

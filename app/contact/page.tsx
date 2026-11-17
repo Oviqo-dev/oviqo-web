@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import FloatingHeader from "../../components/navBar";
-import Footer from "../../components/footer";
-{/*ff */}
+
 
 export default function Contact(){
 
@@ -140,8 +139,7 @@ export default function Contact(){
           </div>
            
       </main>
-      <Footer/>
-      
+    
 
   
     </>

@@ -1,6 +1,5 @@
 'use client';
 
-import Footer from "../../components/footer";
 import FloatingHeader from "../../components/navBar";
 export default function About(){
 
@@ -44,7 +43,6 @@ export default function About(){
 
             
       </main>
-      <Footer/>
           
         
         

@@ -3,7 +3,6 @@
 
 import Link from 'next/link';
 import FloatingHeader from "../components/navBar";
-import Footer from "../components/footer";
 
 
 export default function Home() {
@@ -67,7 +66,6 @@ export default function Home() {
           </div>
         </section>
 
-        <Footer/>
         
       </div>
     </>

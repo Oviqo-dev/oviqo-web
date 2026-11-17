@@ -51,10 +51,6 @@ export default function Blog({
       <Suspense fallback={<BlogLoadingSkeleton />}>
         <BlogContent searchParams={searchParams} />
       </Suspense>
-      <footer className="mt-0 pt-0 ml-1 py-6 text-center text-xs text-gray-900 bg-white">
-        <p>© 2026 OVIQO. All rights reserved.</p>
-        <p>Developed by Adl &amp; Ahad.</p>
-      </footer>
     </>
   );
 }
