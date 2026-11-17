@@ -15,10 +15,10 @@
     "@syncfusion/ej2-react-inputs": "^35.1.43",
     "@tailwindcss/typography": "^0.5.4",
     "hamburger-react": "^2.5.2",
-    "next": "16.4.3",
+    "next": "^16.4.6",
     "next-sanity": "^11.6.13",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-icons": "^5.7.0",
     "resend": "^6.37.0"
   },

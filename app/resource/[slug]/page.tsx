@@ -176,10 +176,12 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
           <section className="max-w-7xl mx-auto pl-6 pr-6 pb-16">
             <div className="flex md:gap-12 mt-10">
               <aside className="flex-1 max-w-[35%]">
-                <div className="sticky top-24 flex-col gap-6 hidden md:block">
+                
+                <div className="sticky top-24 flex-col gap-6  hidden md:block">
+                  
                   <TableOfContents headings={headings} />
 
-                  <div className="rounded-lg w-full bg-[#F7F7FF] p-10 sm:hidden md:block">
+                  <div className="rounded-lg w-full bg-[#F7F7FF] mt-3 p-10 sm:hidden md:block">
                     <h2 className="font-semibold">Subscribe to the newsletter</h2>
                     <p>Government tender news delivered straight to your inbox</p>
                     <form className="rounded-lg w-full h-10 mt-5 bg-white text-gray-500 items-center flex justify-center mx-auto text-left">
