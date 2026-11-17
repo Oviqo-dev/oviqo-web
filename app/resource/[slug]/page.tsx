@@ -8,8 +8,8 @@ import TableOfContents from "../../../components/tableOfContents";
 import { getPortableTextComponents } from "../../../components/portableTextComponents";
 import { extractHeadings } from "../../../lib/headings";
 import userProfile from "../../../public/memoji.png";
-
 import Image from "next/image";
+import NewsLetter from "../../../components/newsLetter";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -179,20 +179,9 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
                 <div className="sticky top-24 flex-col gap-6  hidden md:block">
                   
                   <TableOfContents headings={headings} />
+                  <NewsLetter/>
 
-                  <div className="rounded-lg w-full bg-[#F7F7FF] mt-3 p-10 sm:hidden md:block">
-                    <h2 className="font-semibold">Subscribe to the newsletter</h2>
-                    <p>Government tender news delivered straight to your inbox</p>
-                    <form className="rounded-lg w-full h-10 mt-5 bg-white text-gray-500 items-center flex justify-center mx-auto text-left">
-                      Enter your email
-                    </form>
-                    <button className="rounded-lg w-full h-10 mt-5 bg-black text-white">
-                      Subscribe
-                    </button>
-                    <p className="text-center mt-3 text-gray-500">
-                      No spam, we hate it too!
-                    </p>
-                  </div>
+                  
                 </div>
               </aside>
 
