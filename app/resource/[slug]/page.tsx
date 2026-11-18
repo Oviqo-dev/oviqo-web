@@ -206,9 +206,30 @@ async function PostContent({ params }: { params: Promise<{ slug: string }> }) {
 export default function PostPage(props: { params: Promise<{ slug: string }> }) {
   return (
     <main className="min-h-screen flex flex-col gap-4 text-black">
-      <Suspense fallback={<div className="animate-pulse p-6">Loading post...</div>}>
+      <Suspense fallback={<SkeletonLoading/>}>
         <PostContent params={props.params} />
       </Suspense>
     </main>
   );
+}
+
+function SkeletonLoading(){
+  return(
+    <div>
+      <FloatingHeader/>
+    <div className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 mt-0 pl-7 pr-7 py-10">
+
+       <div className="animate-pulse space-y-4">
+        <div className="h-8 bg-[#EBEAFB] rounded w-1/4"></div>
+        <div className="h-64 bg-[#EBEAFB] rounded-lg"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
+        </div>
+      </div>
+
+    </div>
+</div>
+  )
 }
