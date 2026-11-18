@@ -226,12 +226,12 @@ function BlogLoadingSkeleton() {
   return (
     <div className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 mt-0 pl-7 pr-7 py-10">
       <div className="animate-pulse space-y-4">
-        <div className="h-8 bg-gray-200 rounded w-1/4"></div>
-        <div className="h-64 bg-gray-200 rounded-lg"></div>
+        <div className="h-8 bg-[#EBEAFB] rounded w-1/4"></div>
+        <div className="h-64 bg-[#EBEAFB] rounded-lg"></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          <div className="h-65 bg-gray-200 rounded-lg"></div>
-          <div className="h-65 bg-gray-200 rounded-lg"></div>
-          <div className="h-65 bg-gray-200 rounded-lg"></div>
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
+          <div className="h-65 bg-[#EBEAFB] rounded-lg"></div>
         </div>
       </div>
     </div>
