@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OVIQO",
+  title: "OVIQO | Win more government contracts",
   description: "The system to win government contracts",
 };
 
