@@ -213,28 +213,30 @@ export default function PostPage(props: { params: Promise<{ slug: string }> }) {
   );
 }
 
-function SkeletonLoading(){
-  return(
+export function SkeletonLoading() {
+  return (
     <div>
-      <FloatingHeader/>
-    <div className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between pt-0 mt-0 pl-7 pr-7 py-10">
+      <FloatingHeader />
+      <div className="flex-1 flex mx-auto flex-col w-full max-w-7xl justify-between px-7 py-10">
+        <div className="animate-pulse space-y-4">
+          <div className="h-8 bg-[#EBEAFB] rounded w-1/4" />
+          <div className="h-64 bg-[#EBEAFB] rounded-lg" />
 
-       <div className="animate-pulse space-y-4">
-        <div className="h-8 bg-[#EBEAFB] rounded w-1/4"></div>
-        <div className="h-64 bg-[#EBEAFB] rounded-lg"></div>
-        <div className="display:none md:flex gap-6 mt-6">
-          <div className="h-65 w-[30%] bg-[#EBEAFB] rounded-lg"></div>
-          <div className="h-65 w-[70%] bg-[#EBEAFB] rounded-lg"></div>
           
-        </div>
-        <div className="md:display:none grid grid-cols-1 gap-6 mt-6">
-          <div className="h-65 w-[30%] bg-[#EBEAFB] rounded-lg"></div>
-          <div className="h-65 w-[70%] bg-[#EBEAFB] rounded-lg"></div>
+          <div className="hidden md:flex gap-6 mt-6">
+            <div className="h-64 w-[30%] bg-[#EBEAFB] rounded-lg" />
+            <div className="h-64 w-[70%] bg-[#EBEAFB] rounded-lg" />
+          </div>
+
           
+          <div className="grid md:hidden grid-cols-1 gap-6 mt-6">
+            <div className="h-64 w-full bg-[#EBEAFB] rounded-lg" />
+            <div className="h-64 w-full bg-[#EBEAFB] rounded-lg" />
+          </div>
         </div>
       </div>
-
     </div>
-</div>
-  )
+  );
+
+  
 }
