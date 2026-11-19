@@ -222,7 +222,12 @@ function SkeletonLoading(){
        <div className="animate-pulse space-y-4">
         <div className="h-8 bg-[#EBEAFB] rounded w-1/4"></div>
         <div className="h-64 bg-[#EBEAFB] rounded-lg"></div>
-        <div className="grid grid-cols-1 md:flex gap-6 mt-6">
+        <div className="display:none md:flex gap-6 mt-6">
+          <div className="h-65 w-[30%] bg-[#EBEAFB] rounded-lg"></div>
+          <div className="h-65 w-[70%] bg-[#EBEAFB] rounded-lg"></div>
+          
+        </div>
+        <div className="md:display:none grid grid-cols-1 gap-6 mt-6">
           <div className="h-65 w-[30%] bg-[#EBEAFB] rounded-lg"></div>
           <div className="h-65 w-[70%] bg-[#EBEAFB] rounded-lg"></div>
           
