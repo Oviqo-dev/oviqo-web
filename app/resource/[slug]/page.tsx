@@ -229,9 +229,9 @@ export function SkeletonLoading() {
           </div>
 
           
-          <div className="grid md:hidden grid-cols-1 gap-6 mt-6">
+          <div className="grid md:hidden gap-6 mt-6">
             <div className="h-64 w-full bg-[#EBEAFB] rounded-lg" />
-            <div className="h-64 w-full bg-[#EBEAFB] rounded-lg" />
+            
           </div>
         </div>
       </div>
