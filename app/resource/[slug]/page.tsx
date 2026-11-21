@@ -11,6 +11,7 @@ import userProfile from "../../../public/memoji.png";
 import Image from "next/image";
 import NewsLetter from "../../../components/newsLetter";
 
+
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
   "author": author->name,

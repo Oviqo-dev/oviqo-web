@@ -1,8 +1,8 @@
-'use client';
 
-
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import FloatingHeader from "../components/navBar";
+import bg from "../public/background_image.jpg";
 
 
 export default function Home() {
@@ -11,15 +11,17 @@ export default function Home() {
     <>
      <FloatingHeader/>
       <div className="-mt-22 min-h-screen flex flex-col justify-between text-[#0F172A]">
-        <div
-          className="min-h-screen flex flex-col justify-between"
-          style={{
-            backgroundImage: `url('/background_image.jpg')`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <div className="relative isolate min-h-screen flex flex-col justify-between">
+          <Image
+            src={bg}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={70}
+            placeholder="blur"
+            className="object-cover object-center -z-10"
+          />
           <div className="h-20" />
 
           <main className="relative flex-1 flex flex-col items-center justify-center px-4 sm:px-6 text-center max-w-4xl mx-auto my-auto w-full">
