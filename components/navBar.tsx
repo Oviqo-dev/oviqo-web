@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -5,12 +6,15 @@ import Link from 'next/link';
 
 export default function FloatingHeader() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen,setMenuOpen] = useState<boolean>(false);
+  
+
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    handleScroll(); // set correct state on load / refresh mid-page
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -36,17 +40,15 @@ export default function FloatingHeader() {
         }
       `}</style>
 
-      <div className="sticky top-0 z-50 w-full pt-4 px-4 pl-0 pr-0">
+      <div className="sticky top-0 z-50 w-full pt-4 px-4 transition-all duration-300 pl-0 pr-0">
         <header
-          className={`mx-auto h-14 flex items-center justify-between px-6 rounded-full border
-            transition-[max-width,background-color,border-color,box-shadow,backdrop-filter]
-            duration-300 ease-out ${
-              scrolled
-                ? 'max-w-5xl bg-white/80 backdrop-blur-md border-gray-200/80 shadow-lg'
-                : 'max-w-7xl bg-transparent border-transparent shadow-none'
-            }`}
+          className={`mx-auto transition-all duration-300 flex items-center justify-between ${
+            scrolled
+              ? 'max-w-5xl bg-white/80 backdrop-blur-md border border-gray-200/80 rounded-full px-6 py-3 shadow-lg text-gray-900'
+              : 'max-w-7xl px-6 py-4 text-gray-700'
+          }`}
         >
-          <div className="flex-1 flex items-center justify-start">
+          <div className="flex-1 flex items-center justify-start mt-0.5">
             <Link href="/" className="font-bold text-lg text-gray-900 hover:text-black">
               OVIQO
             </Link>
@@ -60,34 +62,36 @@ export default function FloatingHeader() {
           </nav>
 
           <div className="flex-1 flex items-center justify-end">
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden ml-4 px-4"
-            >
-              {menuOpen ? '✕' : '☰'}
+
+            <button type="button" 
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden ml-4 px-4 text-black">
+                {menuOpen ? '✕' : '☰'}
             </button>
 
+
+           
             <Link
               href="/contact"
               className="hidden lg:inline-flex px-5 py-2 text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]"
             >
               Book a demo
             </Link>
+
+        
+         
           </div>
         </header>
+         {menuOpen && (
+              <nav className="lg:hidden flex flex-col gap-2 text-black border border-gray-200 rounded-2xl px-4 py-4 shadow-lg mx-4 mt-2 bg-white">
+                 <Link href="/">Solutions</Link>
+                 <Link href="/plans">Plans</Link>
+                 <Link href="/resource">Resources</Link>
+                 <Link href="/about">About us</Link>
+                 <Link href="/contact" className="mt-2 w-fit px-5 py-2 lg:text-sm font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]">Book a demo</Link>
 
-        {menuOpen && (
-          <nav className="lg:hidden flex flex-col gap-2 text-black border border-gray-200 rounded-2xl px-4 py-4 shadow-lg mx-4 mt-2 bg-white">
-            <Link href="/">Solutions</Link>
-            <Link href="/plans">Plans</Link>
-            <Link href="/resource">Resources</Link>
-            <Link href="/about">About us</Link>
-            <Link href="/contact" className="mt-2 w-fit px-5 py-2 font-semibold rounded-full shadow-sm text-white bg-[#9d96e9] hover:bg-[#8b84dd]">
-              Book a demo
-            </Link>
-          </nav>
-        )}
+              </nav>
+             )}
       </div>
     </>
   );
